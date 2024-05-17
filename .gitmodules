@@ -1,0 +1,4 @@
+[submodule "nvim/.config/nvim/lua/NeovimConfig"]
+	path = nvim/.config/nvim/lua/NeovimConfig
+	url = git@github.com:Wppopqpu/NeovimConfig.git
+	branch = dev
