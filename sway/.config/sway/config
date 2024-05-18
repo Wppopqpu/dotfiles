@@ -229,4 +229,7 @@ client.unfocused #64496b #64496b77 #888888aa #7838f577 #64496b
 
 for_window [app_id="foot"] opacity set "0.9" 
 
+smart_borders on
+smart_gaps on
+
 include /etc/sway/config.d/*
