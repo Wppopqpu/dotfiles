@@ -237,4 +237,23 @@ for_window [app_id="foot"] opacity set "0.9"
 smart_borders on
 smart_gaps on
 
+#notifications
+exec mako
+
+#sound volumn adjust
+bindsym $mod+Control+Equal exec pactl set-sink-volumn @DEFAULT_SINK@ +5%
+bindsym $mod+Control+Minus exec pactl set-sink-volumn @DEFAULT_SINK@ -5%
+
+#screenshots
+set $ps1 Print
+set $ps2 Control+Print
+set $ps3 Alt+Print
+set $ps4 Alt+Control+Print
+set $psf $(xdg-usr-dir PICTURES)/ps_$(date +"%Y%m%d%H%M%S").png
+
+bindsym $ps3 exec grim - | wlcopy
+bindsym $ps4 exec grim -g  "$(slurp)" - | wl-copy
+bindsym $ps1 exec grim $psf
+bindsym $ps2 exec grim -g "$(slurp)" $psf
+
 include /etc/sway/config.d/*
