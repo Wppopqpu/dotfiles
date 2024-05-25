@@ -5,3 +5,14 @@
 if [[ -f ~/.bashrc ]] ; then
 	. ~/.bashrc
 fi
+
+export LANG=zh_CN.UTF-8
+export LC_COLLATE=C.UTF-8
+
+export MOZ_ENABLE_WAYLAND=1
+
+export SHELL=/bin/fish
+
+export PATH="$HOME/.local/bin:$PATH"
+
+export GTK_THEME=Adwaita-dark
