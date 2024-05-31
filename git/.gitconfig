@@ -1,0 +1,7 @@
+[user]
+	email = wppopqpu@outlook.com
+	name = Wppopqpu
+[init]
+	defaultBranch = main
+[pull]
+	rebase = false
