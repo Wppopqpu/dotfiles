@@ -249,7 +249,7 @@ set $ps1 Print
 set $ps2 Control+Print
 set $ps3 Alt+Print
 set $ps4 Alt+Control+Print
-set $psf $(xdg-usr-dir PICTURES)/ps_$(date +"%Y%m%d%H%M%S").png
+set $psf ~/pictures/ps_$(date +"%Y%m%d%H%M%S").png
 
 bindsym $ps3 exec grim - | wlcopy
 bindsym $ps4 exec grim -g  "$(slurp)" - | wl-copy
