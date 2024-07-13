@@ -23,7 +23,7 @@ set $term kitty
 # sway launcher desktop
 
 for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10, opacity set 0.6
-set $menu exec $term -a launcher -e /usr/bin/sway-launcher-desktop
+set $menu exec $term --app-id launcher /usr/bin/sway-launcher-desktop
 
 
 ### Output configuration
@@ -233,7 +233,8 @@ client.focused_inactive #2d0972 #2d097277 #7700feaa #7838f577 #2d0972
 client.unfocused #64496b #64496b77 #888888aa #7838f577 #64496b
 
 # for_window [app_id="foot"] opacity set 0.9
-for_window [app_id="kitty"] opacity set 0.9 
+# set opacity in kitty's conf file
+# for_window [app_id="kitty"] opacity set 0.9 
 
 
 smart_borders on
