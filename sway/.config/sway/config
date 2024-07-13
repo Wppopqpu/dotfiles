@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term foot
+set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -22,7 +22,7 @@ set $term foot
 
 # sway launcher desktop
 
-for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
+for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10, opacity set 0.6
 set $menu exec $term -a launcher -e /usr/bin/sway-launcher-desktop
 
 
@@ -232,7 +232,9 @@ client.focused #3e1586 #3e158677 #ffffff #7838f577 #3e1586
 client.focused_inactive #2d0972 #2d097277 #7700feaa #7838f577 #2d0972
 client.unfocused #64496b #64496b77 #888888aa #7838f577 #64496b
 
-for_window [app_id="foot"] opacity set "0.9" 
+# for_window [app_id="foot"] opacity set 0.9
+for_window [app_id="kitty"] opacity set 0.9 
+
 
 smart_borders on
 smart_gaps on
@@ -258,7 +260,7 @@ bindsym $ps2 exec grim -g "$(slurp)" $psf
 
 # floating
 for_window [window_role="pop-up"] floating enable
-for_window [window_role="bubble"] floating_enable
+for_window [window_role="bubble"] floating enable
 for_window [window_role="dialog"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_role="task_dialog"] floating enable
