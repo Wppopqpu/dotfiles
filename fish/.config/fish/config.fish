@@ -10,4 +10,9 @@ if status is-interactive
 	if test -e $FPATH
 		. $FPATH
 	end
+
+	# Greeting.
+	function fish_greeting
+		echo "󱄄  󰆍 "
+	end
 end
