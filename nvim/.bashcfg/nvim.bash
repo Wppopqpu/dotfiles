@@ -1,1 +1,0 @@
-export VISUAL=kitty nvim
