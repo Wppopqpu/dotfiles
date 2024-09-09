@@ -272,4 +272,7 @@ for_window [class="(?i)pinenery"] floating enable
 
 for_window [floating] opacity  set 0.9
 
+# Input method.
+exec fcitx
+
 include /etc/sway/config.d/*
