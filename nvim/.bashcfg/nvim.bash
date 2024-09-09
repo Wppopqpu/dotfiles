@@ -1,4 +1,1 @@
-return
-
-export PAGER="nvim -"
-export MANPAGER='nvim -c "set ft=man" -'
+export VISUAL=kitty nvim
