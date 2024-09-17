@@ -209,7 +209,7 @@ bindsym $mod+r mode "resize"
 bar {
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
+    status_command while true; do echo "$(fish ~/scripts/show_traffic.fish) $(date +'%Y-%m-%d %I:%M:%S %p')"; sleep 1; done
 
     colors {
         statusline #888888aa
