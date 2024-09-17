@@ -1,6 +1,6 @@
 #!/bin/fish
 function convert_to_hrf
-	numfmt --to=iec-i $argv
+	numfmt --to=si $argv
 end
 
 function get_stats0
