@@ -44,9 +44,9 @@ if test -f $tmp_file
 	set rx_hrf (convert_to_hrf $rx_diff)B
 	set tx_hrf (convert_to_hrf $tx_diff)B
 
-	set pad_width 9
+	set pad_width 8
 
-	echo  (string pad -w$pad_width -c_ $rx_hrf)  (string pad -w$pad_width -c_ $tx_hrf)
+	echo (string pad -w$pad_width -c_ $rx_hrf) (string pad -w$pad_width -c_ $tx_hrf)
 end
 
 echo $rx_total $tx_total > $tmp_file
