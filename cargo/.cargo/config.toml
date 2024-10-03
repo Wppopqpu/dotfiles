@@ -1,0 +1,11 @@
+[sourse.crates-io]
+replace-with = "rsproxy"
+
+[sourse.rsproxy]
+registry = "sparse+https://rsproxy.cn/crates.io-index"
+
+# [registries.rsproxy]
+# index = "https://rsproxy.cn/crates.io-index"
+
+# [net]
+# git-fetch-with-cli = true
