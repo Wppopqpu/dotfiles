@@ -8,6 +8,8 @@ if status is-interactive
 	abbr -a gb git branch
 	abbr -a gc git commit
 
+	abbr -a emerge emerge -a
+
 	# Load colors & theme.
 	set FPATH $HOME/.local/share/nvim/lazy/tokyonight.nvim/extras/fish/tokyonight_moon.fish
 	if test -e $FPATH
