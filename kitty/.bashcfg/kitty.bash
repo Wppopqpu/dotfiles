@@ -8,10 +8,10 @@ if [[ -f $FPATH ]] ; then
 	DST_DATE=$(stat -c %Y $TARGET)
 	if [[ $DST_DATE -ge $SRC_DATE ]] ; then
 		echo Kitty theme already updated. Skipped.
-		exit 0
+	else
+		cp -f $FPATH $TARGET
+		echo Kitty theme fetched from tokyonight.
 	fi
-	cp -f $FPATH $TARGET
-	echo Kitty theme fetched from tokyonight.
 else
 	echo "" > $TARGET
 fi
