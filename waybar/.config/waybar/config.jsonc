@@ -1,0 +1,20 @@
+{
+	"layer": "bottom",
+	"modules-left": ["custom/c1", "battery"],
+	"modules-right": ["custom/c2"],
+	"battery": {
+		"format": "{capacity}% {icon}",
+		"format-icons": ["<U+F244>", "<U+F243>", "<U+F242>", "<U+F241>", "<U+F240>"]
+	},
+	"clock": {
+		"format-alt": "{:%c}"
+	},
+	"custom/c1": {
+		"exec": "date",
+		"restart-interval": 1
+	},
+	"custom/c2": {
+		"exec": "fish /home/branch/scripts/show_traffic.fish",
+		"restart-interval": 1
+	}
+}

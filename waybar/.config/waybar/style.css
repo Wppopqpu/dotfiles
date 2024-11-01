@@ -1,0 +1,20 @@
+
+* {
+	font-family: FiraCode Nerd Font;
+	font-size: 12px;
+	min-height: 0;
+}
+
+#waybar {
+	background: transparent;
+	color: #5e85d6;
+	margin: 0px 0px;
+}
+#custom-c1 {
+	background-color: #381855;
+	padding: 0.4rem 0.8rem;
+	margin: 3px 0;
+	border-radius: 0px 1rem 1rem 0px;
+	color: #edd9f2;
+}
+
