@@ -7,6 +7,11 @@ if status is-interactive
 	abbr -a gs git switch
 	abbr -a gb git branch
 	abbr -a gc git commit
+	abbr -a ga git add
+	abbr -a gl git log
+	abbr -a gS git status
+	abbr -a gp git push
+	abbr -a gP git pull
 
 	abbr -a emerge emerge -a
 
