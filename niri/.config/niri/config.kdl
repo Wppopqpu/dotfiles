@@ -204,9 +204,9 @@ environment {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 // spawn-at-startup "mako"
-spawn-at-startup "fcitx5"
+// spawn-at-startup "fcitx5"
 spawn-at-startup "sh" "/home/branch/.local/opt/steampp/Steam++.sh"
-spawn-at-startup "xwayland-satellite"
+// spawn-at-startup "xwayland-satellite"
 // spawn-at-startup "swaybg" "--output=*" "--image=/home/branch/pictures/wallpaper.png" "--mod=fill"
 // spawn-at-startup "waybar"
 

@@ -10,6 +10,3 @@ Type=notify
 NotifyAccess=all
 ExecStart=/usr/bin/xwayland-satellite
 StandardOutput=journal
-
-[Install]
-WantedBy=graphical-session.target

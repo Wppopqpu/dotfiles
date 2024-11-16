@@ -34,6 +34,7 @@ function setup_systemd
 	add_unit $SYSTEM_SERVICE_DIR/waybar.service
 	add_unit $LOCAL_SERVICE_DIR/swaybg.service
 	add_unit $LOCAL_SERVICE_DIR/swayidle.service
+	add_unit $LOCAL_SERVICE_DIR/xwayland-satellite.service
 end
 
 g_log Setting up niri...
