@@ -1,18 +1,25 @@
 # This file sets up some config stuff that cannot be managed by stow.
 
-function log
-	echo "[setup.fish]" $argv
+set CURRENT_FILE setup
+
+function g_log
+	echo "[$CURRENT_FILE]" $argv
 end
 
-function quote
+function g_quote
 	echo "` $argv '"
+end
+
+function g_set_current_file
+	set CURRENT_FILE $argv
 end
 
 set SETUP_DIR $HOME/scripts/setup.d
 
-log Setting up...
+g_log Setting up...
 
 for each in $SETUP_DIR/*.fish
-	log Sourcing (quote $each)...
+	g_log Sourcing (g_quote $each)...
 	source $each
+	g_set_current_file setup
 end
