@@ -22,7 +22,10 @@ end
 
 function add_unit
 	g_log Adding unit (g_quote $argv)...
-	ln -s $argv $NIRI_SERVICE_DIR/
+	ln -s $argv $NIRI_SERVICE_DIR/ 2> /dev/null
+	if test $status -eq 1
+		g_log WARNING: Cannot add unit (g_quote $argv). It may already exists.
+	end
 end
 
 function setup_systemd

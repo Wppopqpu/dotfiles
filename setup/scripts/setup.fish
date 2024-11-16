@@ -1,9 +1,9 @@
 # This file sets up some config stuff that cannot be managed by stow.
 
-set CURRENT_FILE setup
+set CURRENT_FILE setup.fish
 
 function g_log
-	echo "[$CURRENT_FILE]" $argv
+	echo "[$CURRENT_FILE]>>>" $argv
 end
 
 function g_quote
@@ -21,5 +21,5 @@ g_log Setting up...
 for each in $SETUP_DIR/*.fish
 	g_log Sourcing (g_quote $each)...
 	source $each
-	g_set_current_file setup
+	g_set_current_file setup.fish
 end
