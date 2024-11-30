@@ -54,6 +54,10 @@ input {
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
 // Remember to uncomment the node by removing "/-"!
+output "DP-2" {
+	// Lowering fps so that the video card can be unburdened.
+	mode "3840x2160@50.000"
+}
 /-output "eDP-1" {
     // Uncomment this line to disable this output.
     // off
