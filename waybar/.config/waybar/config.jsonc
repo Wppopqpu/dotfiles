@@ -14,7 +14,7 @@
 		"restart-interval": 1
 	},
 	"custom/c2": {
-		"exec": "fish /home/branch/scripts/show_traffic.fish",
-		"restart-interval": 1
+		"exec": "fish /home/branch/scripts/show_traffic_2.fish"
+		// "interval": 1
 	}
 }
