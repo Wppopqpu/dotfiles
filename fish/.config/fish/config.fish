@@ -25,4 +25,12 @@ if status is-interactive
 	function fish_greeting
 		echo "󱄄  󰆍 "
 	end
+
+	function peek_portage_log
+		sudo tail -f /var/tmp/portage/*/*/temp/build.log
+	end
+
+	if test -e $HOME/.local/bin/mise
+		$HOME/.local/bin/mise activate | source
+	end
 end
