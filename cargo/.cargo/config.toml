@@ -1,11 +1,14 @@
 [sourse.crates-io]
-replace-with = "rsproxy"
+replace-with = "tsinghua"
 
 [sourse.rsproxy]
 registry = "sparse+https://rsproxy.cn/crates.io-index"
 
-# [registries.rsproxy]
-# index = "https://rsproxy.cn/crates.io-index"
+[registries.rsproxy]
+index = "https://rsproxy.cn/crates.io-index"
 
-# [net]
-# git-fetch-with-cli = true
+[net]
+git-fetch-with-cli = true
+
+[sourse.tsinghua]
+registry = "sparse+https://mirrors.tuna.tsinghua.edu.cn/crates.io-index/"
