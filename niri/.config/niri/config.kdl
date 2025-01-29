@@ -283,8 +283,8 @@ binds {
     Mod+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+Return { spawn "kitty"; }
-    Mod+SemiColon { spawn "kitty" "--app-id=app_launcher" "/usr/bin/sway-launcher-desktop"; }
+    Mod+Return { spawn "kitty" "-1"; }
+    Mod+SemiColon { spawn "kitty" "-1" "--app-id=app_launcher" "/usr/bin/sway-launcher-desktop"; }
     Mod+Alt+L { spawn "swaylock"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
