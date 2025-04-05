@@ -8,5 +8,5 @@ Requisite=graphical-session.target
 [Service]
 Type=notify
 NotifyAccess=all
-ExecStart=/usr/bin/xwayland-satellite
+ExecStart=/home/branch/selected/xwayland-satellite
 StandardOutput=journal
