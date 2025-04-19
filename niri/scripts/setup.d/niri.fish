@@ -15,7 +15,7 @@ set NIRI_SERVICE_DIR $HOME/.config/systemd/user/niri.service.wants
 
 function prepare_dir
 	if test ! -d $argv
-		g_log Directory (G-quote $argv) does not exist. Trying creating one...
+		g_log Directory (g-quote $argv) does not exist. Trying creating one...
 		mkdir -p $argv
 	end
 end

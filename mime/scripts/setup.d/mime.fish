@@ -6,8 +6,8 @@ set NVIM_DESKTOP nvim.desktop
 g_log Setting up (g_quote xdg-mime)...
 
 function set_mime
-	g_log Setting default of mimetype[s] (g_quote argv[1..]) to (g_quote argv[0])...
-	xdg-mime default argv[0] argv[1..]
+	g_log Setting default of mimetype[s] (g_quote $argv[2..]) to (g_quote $argv[1])...
+	xdg-mime default $argv[1] $argv[2..]
 end
 
 function setup_nvim
