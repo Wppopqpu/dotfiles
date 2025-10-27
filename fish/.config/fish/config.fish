@@ -15,6 +15,8 @@ if status is-interactive
 
 	abbr -a emerge emerge -a
 
+	abbr -a hx helix
+
 	# Load colors & theme.
 	set FPATH $HOME/.local/share/nvim/lazy/tokyonight.nvim/extras/fish/tokyonight_moon.fish
 	if test -e $FPATH
