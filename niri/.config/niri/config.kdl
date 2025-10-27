@@ -152,10 +152,10 @@ layout {
 
         // Color of the ring on the active monitor.
         // active-color "#eeeeeeaa"
-		active-gradient from="#3e158655" to="#32323210" angle=50 relative-to="workspace-view"
+		active-gradient from="#3e1586aa" to="#32323275" angle=50 relative-to="workspace-view"
 
         // Color of the ring on inactive monitors.
-        inactive-color "#32323210"
+        inactive-color "#32323230"
 
         // You can also use gradients. They take precedence over solid colors.
         // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
