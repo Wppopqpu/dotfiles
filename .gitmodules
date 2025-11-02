@@ -2,3 +2,6 @@
 	path = nvim/.config/nvim/lua/NeovimConfig
 	url = git@gitee.com:Wppopqpu/NeovimConfig.git
 	branch = dev
+[submodule "moonc/projects/mooonc"]
+	path = moonc/projects/mooonc
+	url = git@gitee.com:/wppopqpu/moonc.git

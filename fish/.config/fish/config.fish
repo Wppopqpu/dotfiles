@@ -25,7 +25,8 @@ if status is-interactive
 
 	# Greeting.
 	function fish_greeting
-		echo "󱄄  󰆍 "
+		# echo "󱄄  󰆍 "
+		fish $HOME/projects/mooonc/print_random.fish
 	end
 
 	function peek_portage_log
