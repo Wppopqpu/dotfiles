@@ -18,9 +18,3 @@ shell /bin/fish
 
 include theme.conf
 cursor_trail 3
-
-
-# BEGIN_KITTY_THEME
-# Noctalia
-include current-theme.conf
-# END_KITTY_THEME
