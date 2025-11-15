@@ -143,7 +143,7 @@ layout {
         // off
 
         // How many logical pixels the ring extends out from the windows.
-        width 12
+        width 3
 
         // Colors can be set in a variety of ways:
         // - CSS named colors: "red"
@@ -152,10 +152,10 @@ layout {
 
         // Color of the ring on the active monitor.
         // active-color "#eeeeeeaa"
-		active-gradient from="#3e1586aa" to="#32323275" angle=50 relative-to="workspace-view"
+		active-gradient from="#8e65d6" to="#323232" angle=50 relative-to="workspace-view"
 
         // Color of the ring on inactive monitors.
-        inactive-color "#32323230"
+        inactive-color "#323232aa"
 
         // You can also use gradients. They take precedence over solid colors.
         // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
@@ -179,7 +179,7 @@ layout {
         // If you enable the border, you probably want to disable the focus ring.
         off
 
-        width 4
+        width 2
         active-color "#ffc87f"
         inactive-color "#505050"
 
@@ -245,7 +245,7 @@ animations {
     // off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
-    slowdown 3.0
+    slowdown 1.2
 }
 
 // Window rules let you adjust behavior for individual windows.
@@ -498,4 +498,6 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
+
+	Mod+Y { spawn "kitty" "-1" "yazi"; }
 }

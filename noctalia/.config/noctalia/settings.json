@@ -189,7 +189,7 @@
     "dock": {
         "backgroundOpacity": 0.72,
         "colorizeIcons": false,
-        "displayMode": "always_visible",
+        "displayMode": "auto_hide",
         "enabled": true,
         "floatingRatio": 2.18,
         "monitors": [
@@ -209,7 +209,7 @@
         "lockOnSuspend": true,
         "radiusRatio": 1,
         "scaleRatio": 1.05,
-        "screenRadiusRatio": 1,
+        "screenRadiusRatio": 1.17,
         "showScreenCorners": true
     },
     "hooks": {
