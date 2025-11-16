@@ -128,7 +128,7 @@
         "manualSunset": "18:30",
         "matugenSchemeType": "scheme-rainbow",
         "predefinedScheme": "Tokyo Night",
-        "schedulingMode": "off",
+        "schedulingMode": "location",
         "useWallpaperColors": true
     },
     "controlCenter": {
@@ -234,7 +234,7 @@
     "nightLight": {
         "autoSchedule": true,
         "dayTemp": "6500",
-        "enabled": false,
+        "enabled": true,
         "forced": false,
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
@@ -314,11 +314,11 @@
             {
                 "directory": "/home/branch/pictures/wallpapers",
                 "name": "HDMI-A-1",
-                "wallpaper": "/home/branch/pictures/wallpapers/alice.png"
+                "wallpaper": "/home/branch/pictures/wallpapers/yuuka_kazami.jpg"
             }
         ],
         "randomEnabled": true,
-        "randomIntervalSec": 600,
+        "randomIntervalSec": 300,
         "recursiveSearch": false,
         "setWallpaperOnAllMonitors": true,
         "transitionDuration": 1500,
