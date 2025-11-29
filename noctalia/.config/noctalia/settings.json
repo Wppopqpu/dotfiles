@@ -1,39 +1,46 @@
 {
     "appLauncher": {
-        "backgroundOpacity": 0.74,
         "customLaunchPrefix": "",
         "customLaunchPrefixEnabled": false,
+        "enableClipPreview": true,
         "enableClipboardHistory": false,
         "pinnedExecs": [
         ],
         "position": "center",
         "sortByMostUsed": true,
         "terminalCommand": "kitty -1",
-        "useApp2Unit": false
+        "useApp2Unit": false,
+        "viewMode": "list"
     },
     "audio": {
         "cavaFrameRate": 60,
+        "externalMixer": "pwvucontrol || pavucontrol",
         "mprisBlacklist": [
         ],
         "preferredPlayer": "",
+        "visualizerQuality": "high",
         "visualizerType": "linear",
         "volumeOverdrive": false,
         "volumeStep": 5
     },
     "bar": {
         "backgroundOpacity": 0.67,
+        "capsuleOpacity": 1,
         "density": "comfortable",
+        "exclusive": true,
         "floating": false,
         "marginHorizontal": 0.25,
         "marginVertical": 0.25,
         "monitors": [
         ],
+        "outerCorners": true,
         "position": "top",
         "showCapsule": true,
         "widgets": {
             "center": [
                 {
                     "characterCount": 2,
+                    "followFocusedScreen": false,
                     "hideUnoccupied": false,
                     "id": "Workspace",
                     "labelMode": "index"
@@ -41,16 +48,18 @@
             ],
             "left": [
                 {
+                    "diskPath": "/",
                     "id": "SystemMonitor",
                     "showCpuTemp": true,
                     "showCpuUsage": true,
                     "showDiskUsage": false,
                     "showMemoryAsPercent": false,
                     "showMemoryUsage": true,
-                    "showNetworkStats": false
+                    "showNetworkStats": true,
+                    "usePrimaryColor": false
                 },
                 {
-                    "colorizeIcons": false,
+                    "colorizeIcons": true,
                     "hideMode": "hidden",
                     "id": "ActiveWindow",
                     "maxWidth": 145,
@@ -60,10 +69,13 @@
                 },
                 {
                     "hideMode": "hidden",
+                    "hideWhenIdle": false,
                     "id": "MediaMini",
                     "maxWidth": 145,
                     "scrollingMode": "hover",
                     "showAlbumArt": false,
+                    "showArtistFirst": true,
+                    "showProgressRing": true,
                     "showVisualizer": false,
                     "useFixedWidth": false,
                     "visualizerType": "linear"
@@ -77,7 +89,10 @@
                     "blacklist": [
                     ],
                     "colorizeIcons": false,
-                    "id": "Tray"
+                    "drawerEnabled": true,
+                    "id": "Tray",
+                    "pinned": [
+                    ]
                 },
                 {
                     "hideWhenZero": true,
@@ -106,6 +121,7 @@
                     "usePrimaryColor": true
                 },
                 {
+                    "colorizeDistroLogo": false,
                     "customIconPath": "",
                     "icon": "noctalia",
                     "id": "ControlCenter",
@@ -114,12 +130,33 @@
             ]
         }
     },
-    "battery": {
-        "chargingMode": 0
-    },
     "brightness": {
         "brightnessStep": 5,
+        "enableDdcSupport": false,
         "enforceMinimum": true
+    },
+    "calendar": {
+        "cards": [
+            {
+                "enabled": true,
+                "id": "banner-card"
+            },
+            {
+                "enabled": true,
+                "id": "calendar-card"
+            },
+            {
+                "enabled": true,
+                "id": "timer-card"
+            },
+            {
+                "enabled": true,
+                "id": "weather-card"
+            }
+        ]
+    },
+    "changelog": {
+        "lastSeenVersion": ""
     },
     "colorSchemes": {
         "darkMode": true,
@@ -188,7 +225,7 @@
     },
     "dock": {
         "backgroundOpacity": 0.72,
-        "colorizeIcons": false,
+        "colorizeIcons": true,
         "displayMode": "auto_hide",
         "enabled": true,
         "floatingRatio": 2.18,
@@ -197,19 +234,27 @@
         "onlySameOutput": true,
         "pinnedApps": [
         ],
+        "radiusRatio": 0.1,
         "size": 1.44
     },
     "general": {
+        "allowPanelsOnScreenWithoutBar": true,
         "animationDisabled": false,
         "animationSpeed": 1,
         "avatarImage": "/home/branch/pictures/wallpapers/alice.png",
         "compactLockScreen": false,
+        "dimmerOpacity": 0.6,
+        "enableShadows": true,
         "forceBlackScreenCorners": false,
         "language": "",
         "lockOnSuspend": true,
         "radiusRatio": 1,
         "scaleRatio": 1.05,
         "screenRadiusRatio": 1.17,
+        "shadowDirection": "bottom_right",
+        "shadowOffsetX": 2,
+        "shadowOffsetY": 3,
+        "showHibernateOnLockScreen": false,
         "showScreenCorners": true
     },
     "hooks": {
@@ -220,13 +265,14 @@
     "location": {
         "analogClockInCalendar": false,
         "firstDayOfWeek": -1,
-        "name": "Wenzhou",
+        "name": "Yueqing, Wenzhou",
         "showCalendarEvents": true,
         "showCalendarWeather": true,
         "showWeekNumberInCalendar": false,
         "use12hourFormat": false,
         "useFahrenheit": false,
-        "weatherEnabled": true
+        "weatherEnabled": true,
+        "weatherShowEffects": true
     },
     "network": {
         "wifiEnabled": true
@@ -243,7 +289,8 @@
     "notifications": {
         "backgroundOpacity": 1,
         "criticalUrgencyDuration": 15,
-        "doNotDisturb": false,
+        "enableKeyboardLayoutToast": true,
+        "enabled": true,
         "location": "top_right",
         "lowUrgencyDuration": 3,
         "monitors": [
@@ -254,7 +301,10 @@
     },
     "osd": {
         "autoHideMs": 2000,
+        "backgroundOpacity": 1,
         "enabled": true,
+        "enabledTypes": [
+        ],
         "location": "top_right",
         "monitors": [
         ],
@@ -271,17 +321,63 @@
         "videoCodec": "h264",
         "videoSource": "portal"
     },
-    "settingsVersion": 16,
-    "setupCompleted": true,
+    "sessionMenu": {
+        "countdownDuration": 10000,
+        "enableCountdown": true,
+        "position": "center",
+        "powerOptions": [
+            {
+                "action": "lock",
+                "countdownEnabled": true,
+                "enabled": true
+            },
+            {
+                "action": "suspend",
+                "countdownEnabled": true,
+                "enabled": true
+            },
+            {
+                "action": "hibernate",
+                "countdownEnabled": true,
+                "enabled": true
+            },
+            {
+                "action": "reboot",
+                "countdownEnabled": true,
+                "enabled": true
+            },
+            {
+                "action": "logout",
+                "countdownEnabled": true,
+                "enabled": true
+            },
+            {
+                "action": "shutdown",
+                "countdownEnabled": true,
+                "enabled": true
+            }
+        ],
+        "showHeader": true
+    },
+    "settingsVersion": 25,
+    "systemMonitor": {
+        "cpuCriticalThreshold": 90,
+        "cpuWarningThreshold": 80,
+        "criticalColor": "",
+        "diskCriticalThreshold": 90,
+        "diskWarningThreshold": 80,
+        "memCriticalThreshold": 90,
+        "memWarningThreshold": 80,
+        "tempCriticalThreshold": 90,
+        "tempWarningThreshold": 80,
+        "useCustomColors": false,
+        "warningColor": ""
+    },
     "templates": {
+        "alacritty": false,
+        "cava": false,
         "code": false,
         "discord": false,
-        "discord_armcord": false,
-        "discord_dorion": false,
-        "discord_equibop": false,
-        "discord_lightcord": false,
-        "discord_vesktop": false,
-        "discord_webcord": false,
         "enableUserTemplates": false,
         "foot": false,
         "fuzzel": false,
@@ -291,16 +387,20 @@
         "kitty": true,
         "pywalfox": false,
         "qt": true,
+        "spicetify": false,
+        "telegram": false,
         "vicinae": false,
-        "walker": false
+        "walker": false,
+        "wezterm": false
     },
     "ui": {
         "fontDefault": "Roboto",
         "fontDefaultScale": 1,
         "fontFixed": "FiraCode Nerd Font Mono",
         "fontFixedScale": 1,
+        "panelBackgroundOpacity": 0.7000000000000001,
         "panelsAttachedToBar": true,
-        "panelsOverlayLayer": true,
+        "settingsPanelAttachToBar": true,
         "tooltipsEnabled": true
     },
     "wallpaper": {
@@ -310,19 +410,31 @@
         "enabled": true,
         "fillColor": "#000000",
         "fillMode": "crop",
+        "hideWallpaperFilenames": false,
         "monitors": [
             {
                 "directory": "/home/branch/pictures/wallpapers",
                 "name": "HDMI-A-1",
-                "wallpaper": "/home/branch/pictures/wallpapers/yuuka_kazami.jpg"
+                "wallpaper": "/home/branch/pictures/wallpapers/alice.png"
             }
         ],
+        "overviewEnabled": true,
+        "panelPosition": "follow_bar",
         "randomEnabled": true,
         "randomIntervalSec": 300,
         "recursiveSearch": false,
         "setWallpaperOnAllMonitors": true,
         "transitionDuration": 1500,
         "transitionEdgeSmoothness": 0.05,
-        "transitionType": "random"
+        "transitionType": "random",
+        "useWallhaven": false,
+        "wallhavenCategories": "111",
+        "wallhavenOrder": "desc",
+        "wallhavenPurity": "100",
+        "wallhavenQuery": "",
+        "wallhavenResolutionHeight": "",
+        "wallhavenResolutionMode": "atleast",
+        "wallhavenResolutionWidth": "",
+        "wallhavenSorting": "relevance"
     }
 }

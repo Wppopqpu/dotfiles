@@ -201,7 +201,7 @@ layout {
 }
 
 layer-rule {
-	match namespace="^quickshell-overview$"
+	match namespace="^noctalia-overview*"
 	place-within-backdrop true
 }
 
