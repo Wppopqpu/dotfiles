@@ -255,8 +255,11 @@ animations {
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.
 window-rule {
-	geometry-corner-radius 20
+	geometry-corner-radius 17
 	clip-to-geometry true
+}
+
+window-rule {
     // This regular expression is intentionally made as specific as possible,
     // since this is the default config, and we want no false positives.
     // You can get away with just app-id="wezterm" if you want.
@@ -277,6 +280,10 @@ window-rule {
     // Use this instead if you want them visible on third-party screenshot tools.
     // block-out-from "screencast"
 }
+
+hotkey-overlay {
+	 skip-at-startup
+ }
 
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
