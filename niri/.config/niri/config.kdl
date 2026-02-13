@@ -15,7 +15,9 @@ input {
             // For example:
             // layout "us,ru"
             // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
-			options "caps:swapescape"
+
+			// NOTE: swapescape now managed by evremap
+			// options "caps:swapescape"
         }
     }
 
