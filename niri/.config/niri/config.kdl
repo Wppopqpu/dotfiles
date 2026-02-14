@@ -510,3 +510,6 @@ binds {
 
 	Mod+Y { spawn "kitty" "-1" "yazi"; }
 }
+
+include "./noctalia.kdl"
+
