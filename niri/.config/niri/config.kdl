@@ -211,9 +211,10 @@ debug {
 	honor-xdg-activation-with-invalid-serial
 }
 
-environment {
-	DISPLAY ":0" // For xwayland-satellite
-}
+// no longer need to config manually in new niri versions
+// environment {
+// 	DISPLAY ":0" // For xwayland-satellite
+// }
 
 // Add lines like this to spawn processes at startup.
 // Note that running niri as a session supports xdg-desktop-autostart,
