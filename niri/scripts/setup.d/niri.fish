@@ -37,7 +37,9 @@ function setup_systemd
 	add_unit $LOCAL_SERVICE_DIR/xwayland-satellite.service
 end
 
-g_log Setting up niri...
+# g_log Setting up niri...
+#
+# prepare_dir $NIRI_SERVICE_DIR
+# setup_systemd
 
-prepare_dir $NIRI_SERVICE_DIR
-setup_systemd
+g_log niri systemd units no longer managed by setup.d system. skipped
