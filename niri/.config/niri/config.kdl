@@ -511,7 +511,7 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 
-	Mod+Y { spawn "kitty" "-1" "yazi"; }
+	Mod+Y { spawn "ghostty" "-e" "yazi"; }
 }
 
 include "./noctalia.kdl"
