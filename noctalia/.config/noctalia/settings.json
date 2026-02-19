@@ -232,6 +232,9 @@
                     "icon": "noctalia",
                     "id": "ControlCenter",
                     "useDistroLogo": false
+                },
+                {
+                    "id": "plugin:catwalk"
                 }
             ]
         }
@@ -679,7 +682,7 @@
         "fontDefaultScale": 1,
         "fontFixed": "FiraCode Nerd Font Mono",
         "fontFixedScale": 1,
-        "networkPanelView": "wifi",
+        "networkPanelView": "ethernet",
         "panelBackgroundOpacity": 0.7000000000000001,
         "panelsAttachedToBar": true,
         "settingsPanelMode": "attached",
