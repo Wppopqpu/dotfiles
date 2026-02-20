@@ -31,7 +31,7 @@
         "mprisBlacklist": [
         ],
         "preferredPlayer": "",
-        "visualizerType": "linear",
+        "visualizerType": "wave",
         "volumeFeedback": true,
         "volumeOverdrive": false,
         "volumeStep": 5
@@ -234,6 +234,9 @@
                     "id": "plugin:keybind-cheatsheet"
                 },
                 {
+                    "id": "plugin:pomodoro"
+                },
+                {
                     "colorizeDistroLogo": false,
                     "colorizeSystemIcon": "none",
                     "customIconPath": "",
@@ -357,14 +360,14 @@
                         "y": 360
                     },
                     {
-                        "hideMode": "visible",
+                        "hideMode": "hidden",
                         "id": "MediaPlayer",
                         "roundedCorners": true,
                         "showAlbumArt": true,
                         "showBackground": true,
                         "showButtons": true,
                         "showVisualizer": true,
-                        "visualizerType": "linear",
+                        "visualizerType": "wave",
                         "x": 1040,
                         "y": 360
                     },
@@ -396,6 +399,27 @@
                         "showBackground": true,
                         "x": 1040,
                         "y": 600
+                    },
+                    {
+                        "defaultSettings": {
+                            "barWidth": 0.6,
+                            "bloomIntensity": 0.5,
+                            "customPrimaryColor": "#6750A4",
+                            "customSecondaryColor": "#625B71",
+                            "fadeWhenIdle": false,
+                            "innerDiameter": 0.7,
+                            "ringOpacity": 0.8,
+                            "rotationSpeed": 0.5,
+                            "sensitivity": 1.5,
+                            "useCustomColors": false,
+                            "visualizationMode": 3,
+                            "waveThickness": 1
+                        },
+                        "id": "plugin:fancy-audiovisualizer",
+                        "scale": 3.1323873012547754,
+                        "showBackground": true,
+                        "x": 1480,
+                        "y": 40
                     }
                 ]
             }
@@ -428,7 +452,7 @@
         "animationDisabled": false,
         "animationSpeed": 1,
         "autoStartAuth": false,
-        "avatarImage": "/home/branch/pictures/wallpapers/alice.png",
+        "avatarImage": "/home/branch/pictures/wallpapers/reisen.jpg",
         "boxRadiusRatio": 1,
         "clockFormat": "hh\\nmm",
         "clockStyle": "custom",
