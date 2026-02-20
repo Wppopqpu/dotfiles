@@ -515,4 +515,4 @@ binds {
 }
 
 include "./noctalia.kdl"
-
+include "./shaders/ribbons.kdl"
