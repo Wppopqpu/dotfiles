@@ -12,11 +12,11 @@
         "enableSettingsSearch": true,
         "enableWindowsSearch": true,
         "iconMode": "tabler",
-        "ignoreMouseInput": false,
+        "ignoreMouseInput": true,
         "overviewLayer": true,
         "pinnedApps": [
         ],
-        "position": "center",
+        "position": "bottom_center",
         "screenshotAnnotationTool": "",
         "showCategories": true,
         "showIconBackground": true,
@@ -31,7 +31,7 @@
         ],
         "preferredPlayer": "",
         "visualizerType": "linear",
-        "volumeFeedback": false,
+        "volumeFeedback": true,
         "volumeOverdrive": false,
         "volumeStep": 5
     },
@@ -186,6 +186,13 @@
                 },
                 {
                     "defaultSettings": {
+                        "hideBackground": false,
+                        "minimumThreshold": 10
+                    },
+                    "id": "plugin:catwalk"
+                },
+                {
+                    "defaultSettings": {
                         "completedCount": 0,
                         "count": 0,
                         "current_page_id": 0,
@@ -232,9 +239,6 @@
                     "icon": "noctalia",
                     "id": "ControlCenter",
                     "useDistroLogo": false
-                },
-                {
-                    "id": "plugin:catwalk"
                 }
             ]
         }
@@ -409,7 +413,7 @@
         "onlySameOutput": true,
         "pinnedApps": [
         ],
-        "pinnedStatic": false,
+        "pinnedStatic": true,
         "position": "bottom",
         "size": 1.44
     },
@@ -559,7 +563,7 @@
         "enableCountdown": true,
         "largeButtonsLayout": "grid",
         "largeButtonsStyle": false,
-        "position": "center",
+        "position": "bottom_center",
         "powerOptions": [
             {
                 "action": "lock",
