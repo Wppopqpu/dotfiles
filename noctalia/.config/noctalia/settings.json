@@ -373,8 +373,8 @@
                     {
                         "id": "Weather",
                         "showBackground": true,
-                        "x": 1040,
-                        "y": 480
+                        "x": 240,
+                        "y": 80
                     },
                     {
                         "clockStyle": "digital",
@@ -383,8 +383,8 @@
                         "showBackground": true,
                         "useCustomFont": false,
                         "usePrimaryColor": false,
-                        "x": 840,
-                        "y": 360
+                        "x": 40,
+                        "y": 80
                     },
                     {
                         "hideMode": "hidden",
@@ -395,8 +395,8 @@
                         "showButtons": true,
                         "showVisualizer": true,
                         "visualizerType": "wave",
-                        "x": 1040,
-                        "y": 360
+                        "x": 40,
+                        "y": 1320
                     },
                     {
                         "defaultSettings": {
@@ -424,8 +424,8 @@
                         "id": "plugin:todo",
                         "scale": 1.2476715158062257,
                         "showBackground": true,
-                        "x": 1040,
-                        "y": 600
+                        "x": 240,
+                        "y": 200
                     },
                     {
                         "defaultSettings": {
@@ -443,10 +443,10 @@
                             "waveThickness": 1
                         },
                         "id": "plugin:fancy-audiovisualizer",
-                        "scale": 3.1323873012547754,
+                        "scale": 4.44108727362269,
                         "showBackground": true,
-                        "x": 1480,
-                        "y": 40
+                        "x": 1160,
+                        "y": 80
                     }
                 ]
             }
