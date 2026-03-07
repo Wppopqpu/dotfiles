@@ -53,7 +53,7 @@ font-feature = zero
 font-feature = onum
 font-feature = calt
 font-feature = liga
-font-size = 15
+font-size = 14
 window-inherit-font-size = true
 font-thicken = true
 
