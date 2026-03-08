@@ -79,6 +79,7 @@ nvidia-580xx-dkms 580.126.18-2
 nvidia-580xx-settings 580.126.18-1
 nvidia-prime 1.0-5
 openbsd-netcat 1.234_1-1
+opencode 1.2.15-1
 openssh 10.2p1-2
 pavucontrol 1:6.2-1
 pipewire-pulse 1:1.6.0-2
