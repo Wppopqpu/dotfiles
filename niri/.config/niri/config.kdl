@@ -19,7 +19,7 @@ input {
 			// NOTE: swapescape now managed by evremap
 			// options "caps:swapescape"
 		}
-		numlock
+		// numlock
 	}
 
 	// Next sections include libinput settings.
