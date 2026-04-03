@@ -372,6 +372,17 @@
                 },
                 {
                     "id": "WallpaperSelector"
+                },
+                {
+                    "enableOnStateLogic": false,
+                    "generalTooltipText": "重置evremap服务",
+                    "icon": "keyboard",
+                    "id": "CustomButton",
+                    "onClicked": "ghostty -e sudo systemctl restart evremap",
+                    "onMiddleClicked": "",
+                    "onRightClicked": "",
+                    "showExecTooltip": true,
+                    "stateChecksJson": "[]"
                 }
             ],
             "right": [
@@ -594,7 +605,7 @@
     "hooks": {
         "colorGeneration": "",
         "darkModeChange": "",
-        "enabled": false,
+        "enabled": true,
         "performanceModeDisabled": "",
         "performanceModeEnabled": "",
         "screenLock": "",
@@ -636,7 +647,7 @@
     "network": {
         "bluetoothAutoConnect": true,
         "bluetoothDetailsViewMode": "grid",
-        "bluetoothHideUnnamedDevices": false,
+        "bluetoothHideUnnamedDevices": true,
         "bluetoothRssiPollIntervalMs": 10000,
         "bluetoothRssiPollingEnabled": false,
         "disableDiscoverability": false,
