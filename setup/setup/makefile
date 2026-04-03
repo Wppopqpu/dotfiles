@@ -18,8 +18,15 @@ help:
 	@echo "all - set up everything"
 
 .PHONY: all
-all: install-systemd-unit-all
+all: install-systemd-unit-all gui
 
 .PHONY: install-systemd-unit-all
 install-systemd-unit-all: $(filter install-systemd-unit.%, $(TARGETS))
+	@echo installing systemd unit
+
+.PHONY: gui
+gui: gui.theme
+
+.PHONY: gui.theme
+gui.theme: $(filter gui.theme.%, $(TARGETS))
 
