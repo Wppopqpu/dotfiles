@@ -113,11 +113,7 @@
                     "id": "plugin:slowbongo"
                 },
                 {
-                    "defaultSettings": {
-                        "hideBackground": false,
-                        "minimumThreshold": 10
-                    },
-                    "id": "plugin:catwalk"
+                    "id": "plugin:7deaf5:fumo_rotate"
                 }
             ],
             "left": [
