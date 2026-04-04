@@ -122,6 +122,10 @@
             ],
             "left": [
                 {
+                    "iconColor": "none",
+                    "id": "NoctaliaPerformance"
+                },
+                {
                     "compactMode": true,
                     "diskPath": "/",
                     "iconColor": "none",
@@ -275,6 +279,21 @@
                         "useCustomColors": false
                     },
                     "id": "plugin:todo"
+                },
+                {
+                    "defaultSettings": {
+                        "autoHeight": true,
+                        "cheatsheetData": [
+                        ],
+                        "columnCount": 3,
+                        "detectedCompositor": "",
+                        "hyprlandConfigPath": "~/.config/hypr/hyprland.conf",
+                        "modKeyVariable": "$mod",
+                        "niriConfigPath": "~/.config/niri/config.kdl",
+                        "windowHeight": 0,
+                        "windowWidth": 1400
+                    },
+                    "id": "plugin:keybind-cheatsheet"
                 },
                 {
                     "defaultSettings": {
@@ -862,21 +881,36 @@
     },
     "wallpaper": {
         "automationEnabled": true,
-        "directory": "/home/branch/Pictures/Wallpapers",
+        "directory": "/home/branch/pictures/wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "favorites": [
             {
+                "appearance": "dark",
                 "colorScheme": "Tokyo Night",
                 "darkMode": true,
                 "generationMethod": "rainbow",
                 "paletteColors": [
-                    "#bfc2ff",
-                    "#c5c4dd",
-                    "#e8b9d4",
+                    "#a2c9ff",
+                    "#bbc7db",
+                    "#d8bde3",
                     "#ffb4ab"
                 ],
                 "path": "/home/branch/pictures/wallpapers/reisen.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "appearance": "dark",
+                "colorScheme": "Tokyo Night",
+                "darkMode": true,
+                "generationMethod": "rainbow",
+                "paletteColors": [
+                    "#a2c9ff",
+                    "#bbc7db",
+                    "#d8bde3",
+                    "#ffb4ab"
+                ],
+                "path": "/home/branch/pictures/wallpapers/remilia&flandre.jpg",
                 "useWallpaperColors": true
             }
         ],
