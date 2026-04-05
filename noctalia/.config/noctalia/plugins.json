@@ -6,25 +6,38 @@
             "url": "https://github.com/noctalia-dev/noctalia-plugins"
         },
         {
-            "enabled": true,
+            "enabled": false,
             "name": "my_plugins",
             "url": "https://github.com/wppopqpu/noctalia_plugins"
+        },
+        {
+            "enabled": true,
+            "name": "my_plugins",
+            "url": "https://gitee.com/wppopqpu/noctalia_plugins"
         }
     ],
     "states": {
-        "7deaf5:fumo_rotate": {
-            "enabled": true,
-            "sourceUrl": "https://github.com/wppopqpu/noctalia_plugins"
-        },
         "activate-linux": {
             "enabled": true,
             "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
+        },
+        "catwalk": {
+            "enabled": false,
+            "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
+        },
+        "d5fd1b:fumo_rotate": {
+            "enabled": true,
+            "sourceUrl": "https://gitee.com/wppopqpu/noctalia_plugins"
         },
         "fancy-audiovisualizer": {
             "enabled": true,
             "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
         },
         "fumo_rotate": {
+            "enabled": true,
+            "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
+        },
+        "fumo_rotate_test": {
             "enabled": true,
             "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
         },
