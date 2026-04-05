@@ -113,7 +113,7 @@
                     "id": "plugin:slowbongo"
                 },
                 {
-                    "id": "plugin:d5fd1b:fumo_rotate"
+                    "id": "plugin:7deaf5:fumo_rotate"
                 }
             ],
             "left": [
@@ -887,9 +887,9 @@
                 "darkMode": true,
                 "generationMethod": "rainbow",
                 "paletteColors": [
-                    "#a2c9ff",
-                    "#bbc7db",
-                    "#d8bde3",
+                    "#bfc2ff",
+                    "#c5c4dd",
+                    "#e8b9d4",
                     "#ffb4ab"
                 ],
                 "path": "/home/branch/pictures/wallpapers/reisen.jpg",
