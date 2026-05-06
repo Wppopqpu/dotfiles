@@ -100,19 +100,6 @@
                     "unfocusedIconsOpacity": 1
                 },
                 {
-                    "defaultSettings": {
-                        "catColor": "default",
-                        "catOffsetY": 0,
-                        "catSize": 1,
-                        "idleTimeout": 150,
-                        "raveMode": false,
-                        "tappyMode": false,
-                        "useMprisFilter": false,
-                        "waitingTimeout": 30000
-                    },
-                    "id": "plugin:slowbongo"
-                },
-                {
                     "id": "plugin:fumo_rotate"
                 }
             ],
@@ -142,15 +129,6 @@
                     "textColor": "none",
                     "useMonospaceFont": true,
                     "usePadding": false
-                },
-                {
-                    "defaultSettings": {
-                        "hideWhenInactive": false,
-                        "playerName": "musicfox",
-                        "updateInterval": 200,
-                        "width": 300
-                    },
-                    "id": "plugin:mpris-lyric"
                 },
                 {
                     "colorizeIcons": true,
@@ -253,31 +231,6 @@
                 },
                 {
                     "defaultSettings": {
-                        "completedCount": 0,
-                        "count": 0,
-                        "current_page_id": 0,
-                        "isExpanded": false,
-                        "pages": [
-                            {
-                                "id": 0,
-                                "name": "General"
-                            }
-                        ],
-                        "priorityColors": {
-                            "high": "#f44336",
-                            "low": "#9e9e9e",
-                            "medium": "#2196f3"
-                        },
-                        "showBackground": true,
-                        "showCompleted": true,
-                        "todos": [
-                        ],
-                        "useCustomColors": false
-                    },
-                    "id": "plugin:todo"
-                },
-                {
-                    "defaultSettings": {
                         "autoHeight": true,
                         "cheatsheetData": [
                         ],
@@ -305,6 +258,7 @@
                 {
                     "colorizeDistroLogo": false,
                     "colorizeSystemIcon": "none",
+                    "colorizeSystemText": "none",
                     "customIconPath": "",
                     "enableColorization": false,
                     "icon": "noctalia",
@@ -451,35 +405,6 @@
                         "visualizerType": "wave",
                         "x": 40,
                         "y": 1320
-                    },
-                    {
-                        "defaultSettings": {
-                            "completedCount": 0,
-                            "count": 0,
-                            "current_page_id": 0,
-                            "isExpanded": false,
-                            "pages": [
-                                {
-                                    "id": 0,
-                                    "name": "General"
-                                }
-                            ],
-                            "priorityColors": {
-                                "high": "#f44336",
-                                "low": "#9e9e9e",
-                                "medium": "#2196f3"
-                            },
-                            "showBackground": true,
-                            "showCompleted": true,
-                            "todos": [
-                            ],
-                            "useCustomColors": false
-                        },
-                        "id": "plugin:todo",
-                        "scale": 1.2476715158062257,
-                        "showBackground": true,
-                        "x": 240,
-                        "y": 200
                     },
                     {
                         "barWidth": 0.6,
