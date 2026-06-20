@@ -375,6 +375,23 @@ window-rule {
 	default-floating-position x=10 y=10 relative-to="bottom-right"
 }
 
+window-rule {
+	match app-id="io.github.waylyrics.Waylyrics"
+	open-floating true
+	open-focused false
+	default-window-height { fixed 200; }
+	shadow {
+		off
+	}
+	border {
+		off
+	}
+	background-effect {
+		blur false
+		xray false
+	}
+}
+
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
 /-window-rule {
