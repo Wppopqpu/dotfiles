@@ -5,17 +5,46 @@ enabled = true
 capsule = true
 center = [ "clock", "workspaces", "cat" ]
 contact_shadow = true
-end = [ "recorder", "tray", "notifications", "clipboard", "control-center", "session" ]
+end = [ "tray", "recorder", "volume", "notifications", "clipboard", "control-center", "session" ]
 margin_edge = 0
 margin_ends = 0
 radius_bottom_left = -12
 radius_bottom_right = -12
-start = [ "launcher", "wallpaper", "media" ]
+start = [ "group:g1", "media" ]
+
+    [[bar.default.capsule_group]]
+    enabled = true
+    fill = "surface_variant"
+    id = "g1"
+    members = [ "cpu", "ram", "network_tx", "network_rx" ]
+    opacity = 1.0
+    padding = 6.0
 
 [brightness]
 enable_ddcutil = true
 minimum_brightness = 0.28999999351799488
 sync_all_monitors = true
+
+[control_center]
+sidebar = "full"
+
+    [[control_center.shortcuts]]
+    type = "wifi"
+
+    [[control_center.shortcuts]]
+    type = "bluetooth"
+
+    [[control_center.shortcuts]]
+    type = "caffeine"
+
+    [[control_center.shortcuts]]
+    type = "notification"
+
+    [[control_center.shortcuts]]
+    type = "screen_time"
+
+    [[control_center.shortcuts]]
+    type = "system"
 
 [desktop_widgets]
 schema_version = 2
@@ -187,16 +216,22 @@ directory = "/home/branch/pictures/wallpapers"
 
     [wallpaper.automation]
     enabled = true
-	interval_seconds = 7200
+    interval_seconds = 7200
 
     [wallpaper.default]
-    path = "/home/branch/pictures/wallpapers/yuuka_kazami.jpg"
+    path = "/home/branch/pictures/wallpapers/rumia.png"
 
     [wallpaper.last]
-    path = "/home/branch/pictures/wallpapers/yuuka_kazami.jpg"
+    path = "/home/branch/pictures/wallpapers/rumia.png"
 
     [wallpaper.monitors.HDMI-A-1]
-    path = "/home/branch/pictures/wallpapers/yuuka_kazami.jpg"
+    path = "/home/branch/pictures/wallpapers/rumia.png"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/branch/pictures/wallpapers/satori_komeiji.jpg"
+    theme_mode = "dark"
+    wallpaper_scheme = "m3-rainbow"
 
 [widget.cat]
 # this will be replaced by script in .lcoal/state/noctalia/settings.toml
@@ -207,11 +242,30 @@ type = "noctalia/bongocat:cat"
 [widget.clock]
 font_family = "Adwaita Mono"
 
+[widget.cpu]
+show_label = false
+
+[widget.network_rx]
+show_label = false
+
+[widget.network_tx]
+show_label = false
+
+[widget.ram]
+show_label = false
+
 [widget.recorder]
 type = "noctalia/screen_recorder:recorder"
 
+[widget.sysmon]
+show_label = false
+stat = "ram_pct"
+
 [widget.tray]
 drawer = true
+
+[widget.volume]
+show_label = false
 
 [widget.workspaces]
 anchor = true
