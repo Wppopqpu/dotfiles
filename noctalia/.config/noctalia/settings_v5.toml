@@ -148,7 +148,7 @@ polkit_agent = true
 screen_time_enabled = true
 
     [shell.greeter_sync]
-    auto_sync = true
+    auto_sync = false
     privilege_command = "pkexec"
 
     [shell.launcher]
@@ -187,6 +187,7 @@ directory = "/home/branch/pictures/wallpapers"
 
     [wallpaper.automation]
     enabled = true
+	interval_seconds = 7200
 
     [wallpaper.default]
     path = "/home/branch/pictures/wallpapers/yuuka_kazami.jpg"
