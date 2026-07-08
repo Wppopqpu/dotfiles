@@ -455,6 +455,7 @@ binds {
 	// Mod+Alt+L { spawn "swaylock"; }
 	// Mod+SemiColon hotkey-overlay-title="open launcher" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
 	Mod+SemiColon hotkey-overlay-title="open launcher" { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
+	Mod+N hotkey-overlay-title="toggle bar" { spawn "fish" "/home/branch/scripts/noctalia_bar_layer_toggle.fish"; }
 
 	// You can also use a shell. Do this if you need pipes, multiple commands, etc.
 	// Note: the entire command goes as a single argument in the end.
