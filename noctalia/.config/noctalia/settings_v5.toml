@@ -1,3 +1,6 @@
+[audio]
+enable_sounds = true
+
 [backdrop]
 enabled = true
 
@@ -5,7 +8,7 @@ enabled = true
 capsule = true
 center = [ "clock", "workspaces", "cat" ]
 contact_shadow = true
-end = [ "tray", "recorder", "volume", "notifications", "clipboard", "control-center", "session" ]
+end = [ "tray", "group:g2", "group:g4", "group:g3" ]
 margin_edge = 0
 margin_ends = 0
 radius_bottom_left = -12
@@ -20,10 +23,40 @@ start = [ "group:g1", "media" ]
     opacity = 1.0
     padding = 6.0
 
+    [[bar.default.capsule_group]]
+    enabled = true
+    fill = "surface_variant"
+    id = "g2"
+    members = [ "volume", "brightness" ]
+    opacity = 1.0
+    padding = 6.0
+
+    [[bar.default.capsule_group]]
+    enabled = true
+    fill = "surface_variant"
+    id = "g3"
+    members = [ "control-center", "session" ]
+    opacity = 1.0
+    padding = 6.0
+
+    [[bar.default.capsule_group]]
+    enabled = true
+    fill = "surface_variant"
+    id = "g4"
+    members = [ "recorder", "notifications", "clipboard" ]
+    opacity = 1.0
+    padding = 6.0
+
 [brightness]
 enable_ddcutil = true
 minimum_brightness = 0.28999999351799488
 sync_all_monitors = true
+
+[calendar]
+enabled = true
+
+    [calendar.account.wppopqpu]
+    type = "google"
 
 [control_center]
 sidebar = "full"
@@ -164,7 +197,7 @@ directory = "~/videos/screen_records"
 filename_pattern = "recording_%Y%m%d_%H%M%S"
 
 [plugins]
-enabled = [ "noctalia/bongocat", "noctalia/screen_recorder" ]
+enabled = [ "noctalia/screen_recorder", "noctalia/bongocat" ]
 
 [shell]
 avatar_path = "/home/branch/pictures/wallpapers/reisen.jpg"
@@ -202,10 +235,10 @@ screen_time_enabled = true
     direction = "down_right"
 
 [theme]
-community_palette = "Oxocarbon"
+community_palette = "ADW"
 mode = "dark"
 source = "wallpaper"
-wallpaper_scheme = "m3-rainbow"
+wallpaper_scheme = "vibrant"
 
     [theme.templates]
     builtin_ids = [ "btop", "gtk3", "gtk4", "ghostty", "helix", "kcolorscheme", "niri", "qt" ]
@@ -219,19 +252,22 @@ directory = "/home/branch/pictures/wallpapers"
     interval_seconds = 7200
 
     [wallpaper.default]
-    path = "/home/branch/pictures/wallpapers/rumia.png"
+    path = "/home/branch/pictures/wallpapers/satori_komeiji.jpg"
 
     [wallpaper.last]
-    path = "/home/branch/pictures/wallpapers/rumia.png"
+    path = "/home/branch/pictures/wallpapers/satori_komeiji.jpg"
 
     [wallpaper.monitors.HDMI-A-1]
-    path = "/home/branch/pictures/wallpapers/rumia.png"
+    path = "/home/branch/pictures/wallpapers/satori_komeiji.jpg"
 
     [[wallpaper.favorite]]
     palette_source = "wallpaper"
     path = "/home/branch/pictures/wallpapers/satori_komeiji.jpg"
     theme_mode = "dark"
-    wallpaper_scheme = "m3-rainbow"
+    wallpaper_scheme = "faithful"
+
+[widget.brightness]
+show_label = false
 
 [widget.cat]
 # this will be replaced by script in .lcoal/state/noctalia/settings.toml
