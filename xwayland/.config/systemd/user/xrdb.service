@@ -1,0 +1,14 @@
+[Unit]
+Description=run xrdb
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+Type=oneshot
+# 启动命令
+ExecStart=/usr/bin/xrdb -merge %h/.Xresources
+RemainAfterExit=no
+
+[Install]
+# 挂载到用户图形会话的目标上
+WantedBy=graphical-session.target

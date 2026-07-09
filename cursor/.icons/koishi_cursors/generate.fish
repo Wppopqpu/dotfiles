@@ -1,12 +1,8 @@
 #!/usr/bin/env fish
 
-set SCALE 2
+set SIZES 24,32,48,64,96
 
 mkdir -p cursors
 rm -rf cursors/*
 
-cd original
-
-win2xcurtheme ./install.inf --scale $SCALE -o ../cursors
-
-cd ..
+python3 scripts/generate-multi.py --sizes $SIZES original/install.inf -o cursors
