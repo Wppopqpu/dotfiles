@@ -7,12 +7,13 @@ enabled = true
 [bar.default]
 capsule = true
 center = [ "clock", "workspaces", "cat" ]
+concave_edge_corners = true
 contact_shadow = true
 end = [ "tray", "group:g2", "group:g4", "group:g3" ]
 margin_edge = 0
 margin_ends = 0
-radius_bottom_left = -12
-radius_bottom_right = -12
+radius_bottom_left = 12
+radius_bottom_right = 12
 start = [ "group:g1", "media" ]
 
     [[bar.default.capsule_group]]
