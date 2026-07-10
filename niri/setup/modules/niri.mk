@@ -4,9 +4,9 @@ TARGETS += install-systemd-unit.niri
 .PHONY: install-systemd-unit.niri
 install-systemd-unit.niri:  $(NIRI_WANTS_DIR)/noctalia.service $(NIRI_WANTS_DIR)/xrdb.service
 
-$(NIRI_WANTS_DIR)/noctalia.service: $(SYSTEMD_USER_DIR)/noctalia.service
+$(NIRI_WANTS_DIR)/noctalia.service: $(SYSTEMD_USER_DIR)/noctalia.service $(NIRI_WANTS_DIR)
 	ln -s $(SYSTEMD_USER_DIR)/noctalia.service $(NIRI_WANTS_DIR)/
-$(NIRI_WANTS_DIR)/xrdb.service: $(SYSTEMD_USER_DIR)/xrdb.service
+$(NIRI_WANTS_DIR)/xrdb.service: $(SYSTEMD_USER_DIR)/xrdb.service $(NIRI_WANTS_DIR)
 	ln -s $(SYSTEMD_USER_DIR)/xrdb.service $(NIRI_WANTS_DIR)/
 # no longer need to start xwayland-satellite manually in new niri versions
 # this is not used before, actually
