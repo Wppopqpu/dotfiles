@@ -457,6 +457,8 @@ binds {
 	Mod+SemiColon hotkey-overlay-title="open launcher" { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
 	Mod+N hotkey-overlay-title="toggle bar" { spawn "fish" "/home/branch/scripts/noctalia_bar_layer_toggle.fish"; }
 
+	Mod+G hotkey-overlay-title="record window" { spawn "ghostty" "-e" "fish" "-c" "niri msg windows | less ; niri msg layers | less"; }
+
 	// You can also use a shell. Do this if you need pipes, multiple commands, etc.
 	// Note: the entire command goes as a single argument in the end.
 	// Mod+T { spawn "bash" "-c" "notify-send hello && exec alacritty"; }
