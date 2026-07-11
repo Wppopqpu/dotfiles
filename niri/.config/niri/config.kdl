@@ -459,6 +459,11 @@ binds {
 
 	Mod+G hotkey-overlay-title="record window" { spawn "ghostty" "-e" "fish" "-c" "niri msg windows | less ; niri msg layers | less"; }
 
+	// neru keybindings
+	Mod+Z hotkey-overlay-title="neru: recursive mode" { spawn "neru" "recursive_grid"; }
+	Mod+Shift+Z hotkey-overlay-title="neru: grid mode" { spawn "neru" "grid"; }
+	Mod+S hotkey-overlay-title="neru: scroll mode" { spawn "neru" "scroll"; }
+
 	// You can also use a shell. Do this if you need pipes, multiple commands, etc.
 	// Note: the entire command goes as a single argument in the end.
 	// Mod+T { spawn "bash" "-c" "notify-send hello && exec alacritty"; }
