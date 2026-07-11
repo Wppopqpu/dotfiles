@@ -464,6 +464,8 @@ binds {
 	Mod+Shift+Z hotkey-overlay-title="neru: grid mode" { spawn "neru" "grid"; }
 	Mod+S hotkey-overlay-title="neru: scroll mode" { spawn "neru" "scroll"; }
 
+	Mod+MouseMiddle hotkey-overlay-title="start magnifier" { spawn "wooz" "--zoom-in" "25%" "--mouse-track" "--invert-scroll"; }
+
 	// You can also use a shell. Do this if you need pipes, multiple commands, etc.
 	// Note: the entire command goes as a single argument in the end.
 	// Mod+T { spawn "bash" "-c" "notify-send hello && exec alacritty"; }
