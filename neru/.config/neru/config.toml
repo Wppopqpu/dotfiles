@@ -1,0 +1,8 @@
+[hotkeys]
+"Primary+Shift+C" = "__disabled__"
+"Cmd+Shift+C" = "recursive_grid"
+"Primary+Shift+Space"= "__disabled__"
+"Primary+Shift+G"= "__disabled__"
+"Cmd+Shift+G"= "grid"
+"Primary+Shift+S" = "__disabled__"
+"Cmd+Shift+S" = "scroll"

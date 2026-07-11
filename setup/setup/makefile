@@ -22,7 +22,7 @@ all: install-systemd-unit-all gui
 
 .PHONY: install-systemd-unit-all
 install-systemd-unit-all: $(filter install-systemd-unit.%, $(TARGETS))
-	@echo installing systemd unit
+	@echo systemd units installed
 
 .PHONY: gui
 gui: gui.theme
