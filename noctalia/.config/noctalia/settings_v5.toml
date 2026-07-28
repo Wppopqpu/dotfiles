@@ -14,7 +14,7 @@ margin_edge = 0
 margin_ends = 0
 radius_bottom_left = 12
 radius_bottom_right = 12
-start = [ "group:g1", "media" ]
+start = [ "group:g1", "privacy", "media" ]
 
     [[bar.default.capsule_group]]
     enabled = true
@@ -44,7 +44,7 @@ start = [ "group:g1", "media" ]
     enabled = true
     fill = "surface_variant"
     id = "g4"
-    members = [ "recorder", "notifications", "clipboard" ]
+    members = [ "recorder", "notifications", "clipboard", "keybinds", "widget" ]
     opacity = 1.0
     padding = 6.0
 
@@ -82,18 +82,18 @@ sidebar = "full"
 
 [desktop_widgets]
 schema_version = 2
-widget_order = [ "desktop-widget-0000000000000001", "desktop-widget-0000000000000002", "desktop-widget-0000000000000003" ]
+widget_order = [ "desktop-widget-0000000000000001", "desktop-widget-0000000000000002" ]
 
     [desktop_widgets.grid]
-    cell_size = 16
+    cell_size = 8
     major_interval = 4
     visible = true
 
     [desktop_widgets.widget.desktop-widget-0000000000000001]
     box_height = 0.0
     box_width = 0.0
-    cx = 438.0
-    cy = 716.0
+    cx = 960.0
+    cy = 540.0
     output = "HDMI-A-1"
     rotation = 0.0
     type = "fancy_audio_visualizer"
@@ -144,6 +144,24 @@ enabled = true
     [hot_corners.top_right]
     action = "launcher"
 
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 600.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = false
+    timeout = 900.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = false
+    timeout = 660.0
+
 [keybinds]
 down = [ "Down", "Alt+j" ]
 left = [ "Left", "Alt+h" ]
@@ -154,7 +172,8 @@ up = [ "Up", "Alt+k" ]
 auto_locate = true
 
 [lockscreen]
-blurred_desktop = true
+blur_intensity = 0.0
+blurred_desktop = false
 
 [lockscreen_widgets]
 enabled = false
@@ -184,7 +203,6 @@ widget_order = [ "lockscreen-login-box@HDMI-A-1" ]
         show_caps_lock = true
         show_keyboard_layout = true
         show_login_button = true
-        show_password_hint = true
 
 [notification]
 layer = "overlay"
@@ -197,8 +215,12 @@ position = "bottom_right"
 directory = "~/videos/screen_records"
 filename_pattern = "recording_%Y%m%d_%H%M%S"
 
+[plugin_settings."yuuto/arch-updater"]
+aur_helper = "yay"
+panel_placement = "floating"
+
 [plugins]
-enabled = [ "noctalia/screen_recorder", "noctalia/bongocat" ]
+enabled = [ "noctalia/screen_recorder", "noctalia/bongocat", "kenn/keybind-cheatsheet", "dotnetrob/cat", "yuuto/arch-updater" ]
 
 [shell]
 avatar_path = "/home/branch/pictures/wallpapers/reisen.jpg"
@@ -239,7 +261,7 @@ screen_time_enabled = true
 community_palette = "ADW"
 mode = "dark"
 source = "wallpaper"
-wallpaper_scheme = "vibrant"
+wallpaper_scheme = "faithful"
 
     [theme.templates]
     builtin_ids = [ "btop", "gtk3", "gtk4", "ghostty", "helix", "kcolorscheme", "niri", "qt" ]
@@ -247,6 +269,7 @@ wallpaper_scheme = "vibrant"
 
 [wallpaper]
 directory = "/home/branch/pictures/wallpapers"
+transition_on_startup = true
 
     [wallpaper.automation]
     enabled = true
@@ -282,11 +305,21 @@ font_family = "Adwaita Mono"
 [widget.cpu]
 show_label = false
 
+[widget.keybinds]
+type = "kenn/keybind-cheatsheet:keybinds"
+
+[widget.media]
+hide_when_no_media = true
+
 [widget.network_rx]
 show_label = false
 
 [widget.network_tx]
 show_label = false
+
+[widget.privacy]
+capsule = true
+hide_inactive = true
 
 [widget.ram]
 show_label = false
@@ -300,9 +333,13 @@ stat = "ram_pct"
 
 [widget.tray]
 drawer = true
+pinned = [ "Fcitx" ]
 
 [widget.volume]
 show_label = false
+
+[widget.widget]
+type = "yuuto/arch-updater:widget"
 
 [widget.workspaces]
 anchor = true
