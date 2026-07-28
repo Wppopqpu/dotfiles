@@ -19,6 +19,9 @@ if status is-interactive
 
 	abbr -a hx helix
 
+	abbr -a rm trash
+	abbr -a remove rm
+
 	# Load colors & theme.
 	set FPATH $HOME/.local/share/nvim/lazy/tokyonight.nvim/extras/fish/tokyonight_moon.fish
 	if test -e $FPATH
