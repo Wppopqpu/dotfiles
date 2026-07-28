@@ -3,6 +3,7 @@ g_set_current_file mime.fish
 
 set NVIM_DESKTOP nvim.desktop
 set ZATHURA_DESKTOP org.pwmt.zathura.desktop
+set FIREFOX_DESKTOP firefox.desktop
 
 g_log Setting up (g_quote xdg-mime)...
 
@@ -43,6 +44,7 @@ function setup_mime
 
 	setup_one_mime text/plain $NVIM_DESKTOP
 	setup_one_mime application/pdf $ZATHURA_DESKTOP
+	setup_one_mime text/html $FIREFOX_DESKTOP
 end
 
 setup_mime
