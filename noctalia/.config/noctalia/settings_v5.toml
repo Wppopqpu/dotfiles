@@ -204,6 +204,9 @@ widget_order = [ "lockscreen-login-box@HDMI-A-1" ]
         show_keyboard_layout = true
         show_login_button = true
 
+[nightlight]
+enabled = true
+
 [notification]
 layer = "overlay"
 position = "bottom_right"
@@ -217,10 +220,11 @@ filename_pattern = "recording_%Y%m%d_%H%M%S"
 
 [plugin_settings."yuuto/arch-updater"]
 aur_helper = "yay"
+flatpak_enabled = false
 panel_placement = "floating"
 
 [plugins]
-enabled = [ "noctalia/screen_recorder", "noctalia/bongocat", "kenn/keybind-cheatsheet", "dotnetrob/cat", "yuuto/arch-updater" ]
+enabled = [ "noctalia/screen_recorder", "noctalia/bongocat", "kenn/keybind-cheatsheet", "yuuto/arch-updater" ]
 
 [shell]
 avatar_path = "/home/branch/pictures/wallpapers/reisen.jpg"
@@ -269,6 +273,7 @@ wallpaper_scheme = "faithful"
 
 [wallpaper]
 directory = "/home/branch/pictures/wallpapers"
+fill_color = "secondary"
 transition_on_startup = true
 
     [wallpaper.automation]
@@ -289,6 +294,18 @@ transition_on_startup = true
     path = "/home/branch/pictures/wallpapers/satori_komeiji.jpg"
     theme_mode = "dark"
     wallpaper_scheme = "faithful"
+
+    [[wallpaper.favorite]]
+    path = "/home/branch/pictures/wallpapers/alice.png"
+    theme_mode = "auto"
+
+    [[wallpaper.favorite]]
+    path = "/home/branch/pictures/wallpapers/reisen.jpg"
+    theme_mode = "auto"
+
+    [[wallpaper.favorite]]
+    path = "/home/branch/pictures/wallpapers/remilia&flandre.jpg"
+    theme_mode = "auto"
 
 [widget.brightness]
 show_label = false
