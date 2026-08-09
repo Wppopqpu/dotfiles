@@ -277,7 +277,7 @@ fill_color = "secondary"
 transition_on_startup = true
 
     [wallpaper.automation]
-    enabled = true
+    enabled = false
     interval_seconds = 7200
 
     [wallpaper.default]
@@ -321,6 +321,7 @@ font_family = "Adwaita Mono"
 
 [widget.cpu]
 show_label = false
+show_value = false
 
 [widget.keybinds]
 type = "kenn/keybind-cheatsheet:keybinds"
@@ -330,9 +331,11 @@ hide_when_no_media = true
 
 [widget.network_rx]
 show_label = false
+show_value = false
 
 [widget.network_tx]
 show_label = false
+show_value = false
 
 [widget.privacy]
 capsule = true
@@ -340,12 +343,13 @@ hide_inactive = true
 
 [widget.ram]
 show_label = false
+show_value = false
 
 [widget.recorder]
 type = "noctalia/screen_recorder:recorder"
 
 [widget.sysmon]
-show_label = false
+show_value = false
 stat = "ram_pct"
 
 [widget.tray]
