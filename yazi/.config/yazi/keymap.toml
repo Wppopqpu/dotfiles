@@ -1,0 +1,8 @@
+[mgr]
+prepend_keymap = [
+	# Drag and drop out via dragon-drop
+	{ on = "<A-n>", run = "shell -- dragon-drop -x -i -T %h", desc = "Drag files out" },
+
+	# Shell commands
+	{ on = "!", run = 'shell "$SHELL" --block', desc = "Open shell here" },
+]
