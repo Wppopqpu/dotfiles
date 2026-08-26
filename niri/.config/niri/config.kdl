@@ -461,8 +461,10 @@ binds {
 
 	// neru keybindings
 	Mod+Z hotkey-overlay-title="neru: recursive mode" { spawn "neru" "recursive_grid"; }
+	Mod+A hotkey-overlay-title="neru: local recursive grid" { spawn "neru" "recursive_grid" "--zoom-to-depth" "2"; }
 	Mod+Shift+Z hotkey-overlay-title="neru: grid mode" { spawn "neru" "grid"; }
 	Mod+S hotkey-overlay-title="neru: scroll mode" { spawn "neru" "scroll"; }
+	Mod+X hotkey-overlay-title="neru: hints mode" { spawn "neru" "hints"; }
 
 	Mod+MouseMiddle hotkey-overlay-title="start magnifier" { spawn "wooz" "--zoom-in" "25%" "--mouse-track" "--invert-scroll"; }
 
