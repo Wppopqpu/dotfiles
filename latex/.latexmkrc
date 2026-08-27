@@ -9,10 +9,16 @@ $out_dir = "build";
 # ---------- 原有部分（保留） ----------
 sub asy {
 	my $base = $_[0];
+	our $Pdest;
 	my $dir = $out_dir || '.';           # 如果设置了 out_dir 就用它，否则当前目录
 	$dir = $aux_dir if $aux_dir;         # 如果单独设置了 aux_dir，中间文件优先放那里（可选）
 	mkdir $dir unless -d $dir;
-	return system("asy -o '$dir/$base' '$dir/$base.asy'");
+	my $dest = $$Pdest;
+	my ($ext) = $dest =~ /\.([^.]+)$/;
+	$ext = 'pdf' unless defined $ext && length $ext;
+	my $format = ($ext eq 'eps' || $ext eq 'tex') ? $ext : 'pdf';
+	$$Pdest = "$dir/$base.$ext";
+	return system("asy -f $format -o '$dir/$base' '$base.asy'");
 }
 add_cus_dep("asy","eps",0,"asy");
 add_cus_dep("asy","pdf",0,"asy");
@@ -22,10 +28,12 @@ add_cus_dep("asy","tex",0,"asy");
 add_cus_dep('tsqx', 'asy', 0, 'tsqx2asy');
 sub tsqx2asy {
 	my $base = $_[0];
+	our $Pdest;
 	my $dir = $out_dir || '.';
 	$dir = $aux_dir if $aux_dir;
 	mkdir $dir unless -d $dir;
-	system("tsqx -p \"$base.tsqx\" > \"$dir/$base.asy\"");
+	$$Pdest = "$dir/$base.asy";
+	return system("tsqx -p \"$base.tsqx\" > \"$dir/$base.asy\"");
 }
 
 push @generated_exts, "pre", "%R-*.pdf", "%R-*.prc", "%R-*.tex", "%R-*.out", "%R-*.pbsdat", "%R.pbsdat", "%R-*.eps", "%R-*.asy";
