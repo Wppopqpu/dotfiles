@@ -1,0 +1,31 @@
+model = "gpt-5.6-terra"
+model_provider = "heju"
+model_reasoning_effort = "medium"
+
+[model_providers.heju]
+name = "heju"
+base_url = "https://www.hejuapi.com/v1"
+env_key = "OPENAI_API_KEY"
+wire_api = "responses"
+
+[projects."/home/branch/projects"]
+trust_level = "trusted"
+
+[projects."/home/branch/projects/tex"]
+trust_level = "trusted"
+
+[projects."/home/branch/projects/tformula-git"]
+trust_level = "trusted"
+
+[projects."/home/branch/projects/aur/tformula"]
+trust_level = "trusted"
+
+[projects."/home/branch"]
+trust_level = "trusted"
+
+[tui]
+theme = "tokyo-night"
+vim_mode_default = true
+
+[tui.model_availability_nux]
+"gpt-5.6-sol" = 4
