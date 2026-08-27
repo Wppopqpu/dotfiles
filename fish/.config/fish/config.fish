@@ -41,4 +41,10 @@ if status is-interactive
 	if test -e $HOME/.local/bin/mise
 		$HOME/.local/bin/mise activate | source
 	end
+
+	if test -e /usr/bin/direnv
+		/usr/bin/direnv hook fish | source
+	else
+		echo "WARNING: direnv not installed"
+	end
 end
