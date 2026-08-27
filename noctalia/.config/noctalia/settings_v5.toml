@@ -279,6 +279,9 @@ mode = "dark"
 source = "wallpaper"
 wallpaper_scheme = "faithful"
 
+[hooks]
+colors_changed = "fish /home/branch/dotfiles/fcitx/scripts/generate-mellow-theme.fish"
+
     [theme.templates]
     builtin_ids = [ "btop", "gtk3", "gtk4", "ghostty", "helix", "kcolorscheme", "niri", "qt" ]
     community_ids = [ "gimp", "libreoffice", "steam", "fastfetch", "zathura", "yazi" ]
