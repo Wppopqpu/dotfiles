@@ -22,6 +22,13 @@ if status is-interactive
 	abbr -a rm trash
 	abbr -a remove rm
 
+	if test -e /usr/bin/tformula
+		abbr -a codex tformula codex
+		abbr -a opencode tformula opencode
+	else
+		echo WARNING: tformula not installed
+	end
+
 	# Load colors & theme.
 	set FPATH $HOME/.local/share/nvim/lazy/tokyonight.nvim/extras/fish/tokyonight_moon.fish
 	if test -e $FPATH
