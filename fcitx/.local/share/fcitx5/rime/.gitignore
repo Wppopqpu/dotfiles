@@ -1,5 +1,11 @@
+# Runtime metadata and generated files.
 installation.yaml
 user.yaml
-build
-luna_pinyin.userdb
-sync
+build/
+sync/
+trash/
+
+# User dictionaries and temporary database files.
+*.userdb
+*.userdb/
+.temp.userdb/
