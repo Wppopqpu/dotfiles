@@ -3,6 +3,8 @@
 // Check the wiki for a full description of the configuration:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Overview
 
+gestures {}
+
 // Input device configuration.
 // Find the full list of options on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Input
@@ -27,10 +29,13 @@ input {
 	touchpad {
 		// off
 		tap
-		// dwt
-		// dwtp
+		dwt
+		dwtp
+		drag true
+		drag-lock
 		natural-scroll
-		// accel-speed 0.2
+		accel-speed 0.2
+		scroll-factor 0.1
 		// accel-profile "flat"
 		// scroll-method "two-finger"
 		// disabled-on-external-mouse
@@ -39,7 +44,7 @@ input {
 	mouse {
 		// off
 		// natural-scroll
-		// accel-speed 0.2
+		accel-speed 0.2
 		// accel-profile "flat"
 		// scroll-method "no-scroll"
 	}
@@ -56,11 +61,13 @@ input {
 	}
 
 	// Uncomment this to make the mouse warp to the center of newly focused windows.
-	// warp-mouse-to-focus
+	warp-mouse-to-focus
 
 	// Focus windows and outputs automatically when moving the mouse into them.
 	// Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
 	// focus-follows-mouse max-scroll-amount="0%"
+
+	workspace-auto-back-and-forth
 }
 
 // You can configure outputs by their name, which you can find
@@ -273,6 +280,9 @@ layer-rule {
 }
 
 debug {
+	// disable-direct-scanout
+	enable-overlay-planes
+	restrict-primary-scanout-to-matching-format
 	honor-xdg-activation-with-invalid-serial
 }
 
@@ -400,6 +410,11 @@ window-rule {
 }
 
 window-rule {
+	match app-id="steam" title="^Steam 大屏幕模式$"
+	open-fullscreen true
+}
+
+window-rule {
 	match app-id="io.github.waylyrics.Waylyrics"
 	open-floating true
 	open-focused false
@@ -466,7 +481,7 @@ binds {
 	Mod+S hotkey-overlay-title="neru: scroll mode" { spawn "neru" "scroll"; }
 	Mod+X hotkey-overlay-title="neru: hints mode" { spawn "neru" "hints"; }
 
-	Mod+MouseMiddle hotkey-overlay-title="start magnifier" { spawn "wooz" "--zoom-in" "25%" "--mouse-track" "--invert-scroll"; }
+	Mod+E hotkey-overlay-title="start magnifier" { spawn "wooz" "--zoom-in" "25%" "--mouse-track" "--invert-scroll"; }
 
 	// You can also use a shell. Do this if you need pipes, multiple commands, etc.
 	// Note: the entire command goes as a single argument in the end.
