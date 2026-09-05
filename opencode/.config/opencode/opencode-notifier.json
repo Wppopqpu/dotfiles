@@ -1,0 +1,10 @@
+{
+  "sound": true,
+  "notification": true,
+  "notificationSystem": "ghostty",
+  "minDuration": 10,
+  "suppressWhenFocused": true,
+  "linux": {
+    "grouping": true
+  }
+}
