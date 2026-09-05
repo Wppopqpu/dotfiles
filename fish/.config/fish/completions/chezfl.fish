@@ -1,0 +1,1 @@
+complete --keep-order --exclusive --command chezfl --arguments "(COMPLETE=fish /home/branch/.local/stow/rust/bin/chezfl -- (commandline --current-process --tokenize --cut-at-cursor) (commandline --current-token))"
