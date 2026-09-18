@@ -1,6 +1,6 @@
 ---
 name: customize-user-config
-description: Manage dotfiles (stow), etcfiles, and chezfl configuration system. Use when creating stow packages, writing scripts, or working with system state.
+description: Manage all user configuration files. Use this skill whenever the user asks to modify, create, or delete ANY configuration file - including app configs, shell configs, dotfiles, system files, or scripts. Covers ~/dotfiles/*, ~/etcfiles/*, ~/.config/*, ~/scripts/*, and ~/projects/chezfl/*.
 license: MIT
 compatibility: opencode
 metadata:
@@ -493,6 +493,7 @@ cargo run -- apply --label <label>  # Filter by label
 8. **Run add_stowed_flags.fish**: After creating new packages in dotfiles
 9. **User runs update_etc.fish**: Never run it yourself
 10. **Use chezfl for orchestration**: Let chezfl handle multi-step setup (install → stow → configure → enable)
+11. **Preserve instead of delete**: If scripts or config files are no longer needed, keep them in the repository for future reference rather than deleting them
 
 ## Anti-patterns
 
@@ -506,6 +507,7 @@ cargo run -- apply --label <label>  # Filter by label
 - ❌ Putting scripts anywhere other than dotfiles/utils/scripts/
 - ❌ Creating giant monolithic stow packages (split by application)
 - ❌ Adding external projects directly (use submodules)
+- ❌ Deleting unused scripts or configs (preserve them for future reference)
 
 ## Workflow Checklist
 
