@@ -5,3 +5,9 @@
 [submodule "moonc/projects/mooonc"]
 	path = moonc/projects/mooonc
 	url = git@gitee.com:/wppopqpu/moonc.git
+[submodule "opencode/.config/opencode/skills/opencode-skill-creator"]
+	path = opencode/.config/opencode/skills/opencode-skill-creator
+	url = https://github.com/antongulin/opencode-skill-creator.git
+[submodule "opencode/.config/opencode/skills/latex-document-skill"]
+	path = opencode/.config/opencode/skills/latex-document-skill
+	url = https://github.com/ndpvt-web/latex-document-skill.git
