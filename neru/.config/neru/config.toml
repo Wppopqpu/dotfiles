@@ -2,6 +2,7 @@
 # 所以改在niri.kdl中定义.
 [hotkeys]
 "Primary+Shift+C" = "__disabled__"
+"Primary+Shift+B" = "__disabled__"
 "Primary+Shift+Space" = "__disabled__"
 "Primary+Shift+G" = "__disabled__"
 "Primary+Shift+S" = "__disabled__"
