@@ -1,0 +1,23 @@
+{
+  "skill_name": "study-memory-tex",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我有一道初二数学错题和老师给的答案，内容如下：\n\n题目：已知二次函数 y = x^2 - 4x + 3，求它在区间 [0, 3] 上的最大值和最小值。\n我的答案：最小值 -1（x=2 时），最大值 0（x=3 时）。\n老师批改：最小值 -1 正确；最大值应为 3（x=0 时）。\n\n请从这道错题中提炼能直接背下来的知识点或方法，核对老师的批改是否正确，并生成一份简短的中文 TeX 记忆卡文档，保存到 ./outputs/ 下。",
+      "expected_output": "独立验算确认最小值 -1（x=2）、最大值 3（x=0），提炼出\"区间最值要比较顶点和端点\"等可迁移方法卡，生成可编译的中文 TeX，标注已复核状态。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "下面是我这次物理考试做错的两道题，请整理成复习资料。不要抄题目，只留以后做题能直接想起的方法，并帮我校验关键结论，最后输出中文 TeX 到 ./outputs/。\n\n第 5 题：质量 2 kg 的物体从 5 m 高处自由下落（g 取 10 m/s^2），求落地速度。参考答案：10 m/s。我写的是 100 m/s。\n\n第 8 题：一段导体两端电压 6 V，通过电流 0.5 A，求电阻。参考答案：12 Ω。我写的是 3 Ω。",
+      "expected_output": "独立复核两题（v=10 m/s、R=12 Ω），指出学生错误原因（漏开方、公式用反），提炼成简短方法卡（如 v=sqrt(2gh) 记得开方、R=U/I 别倒置），生成结构清晰的中文 TeX 并标注复核状态。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "这是我英语阅读理解错的一道题：\n\n原文片段：\"Although the new policy was intended to reduce traffic, many residents complained that it merely shifted congestion to smaller streets.\"\n题目：What was the actual effect of the new policy according to residents?\nA. It reduced traffic significantly.\nB. It moved congestion elsewhere.\nC. It had no effect at all.\nD. It improved smaller streets.\n我选了 A，参考答案是 B。\n\n请提炼阅读题中能直接记忆的定位和排除方法，注意不要把主观解释写成绝对正确，并生成中文 TeX 小讲义到 ./outputs/。",
+      "expected_output": "区分客观线索（although/merely 转折信号词指向 B）与解释依赖结论，提炼\"转折词后是真实态度\"\"intended to 是目的不是结果\"等阅读策略卡，恰当标注复核状态，生成中文 TeX。",
+      "files": []
+    }
+  ]
+}
