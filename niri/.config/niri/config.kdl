@@ -280,7 +280,7 @@ layer-rule {
 }
 
 debug {
-	// disable-direct-scanout
+	disable-direct-scanout
 	enable-overlay-planes
 	restrict-primary-scanout-to-matching-format
 	honor-xdg-activation-with-invalid-serial
@@ -369,7 +369,7 @@ layer-rule {
 	}
 }
 layer-rule {
-	match namespace="^noctalia-desktop-widget-clock"
+	match namespace="^noctalia-desktop-widget-clock$"
 	opacity 0.8
 	background-effect {
 		blur true
@@ -389,7 +389,7 @@ window-rule {
 	// This regular expression is intentionally made as specific as possible,
 	// since this is the default config, and we want no false positives.
 	// You can get away with just app-id="wezterm" if you want.
-	match app-id="app_launcher"
+	match app-id="^app_launcher$"
 	default-column-width {
 		proportion 0.3
 	}
@@ -400,22 +400,24 @@ window-rule {
 	// This app-id regular expression will work for both:
 	// - host Firefox (app-id is "firefox")
 	// - Flatpak Firefox (app-id is "org.mozilla.firefox")
-	match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+	match app-id=r#"^firefox$"# title="^Picture-in-Picture$"
 	open-floating true
 }
 
 window-rule {
-	match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+	match app-id="^steam$" title=r#"^notificationtoasts_\d+_desktop$"#
+	open-floating true
+	open-focused false
 	default-floating-position x=10 y=10 relative-to="bottom-right"
 }
 
 window-rule {
-	match app-id="steam" title="^Steam 大屏幕模式$"
+	match app-id="^steam$" title="^Steam 大屏幕模式$"
 	open-fullscreen true
 }
 
 window-rule {
-	match app-id="io.github.waylyrics.Waylyrics"
+	match app-id="^io.github.waylyrics.Waylyrics$"
 	open-floating true
 	open-focused false
 	default-window-height { fixed 200; }
