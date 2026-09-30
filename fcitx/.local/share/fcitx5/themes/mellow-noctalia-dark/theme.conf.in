@@ -2,7 +2,7 @@
 # 名称
 Name=Mellow Graphite dark
 # 版本
-Version=1.10
+Version=1.10.1
 # 作者
 Author=sanweiya
 # 描述
@@ -132,7 +132,7 @@ Right=9
 # 顶部边距
 Top=7
 # 底部边距
-Bottom=7
+Bottom=6
 
 [InputPanel/TextMargin]
 # 左侧边距
@@ -409,4 +409,3 @@ Right=6
 Top=6
 # 底部边距
 Bottom=6
-
