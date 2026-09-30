@@ -5,7 +5,7 @@ model_reasoning_effort = "medium"
 [model_providers.heju]
 name = "heju"
 base_url = "https://www.hejuapi.com/v1"
-env_key = "OPENAI_API_KEY"
+env_key = "HEJU_API_KEY"
 wire_api = "responses"
 
 [projects."/home/branch/projects"]
