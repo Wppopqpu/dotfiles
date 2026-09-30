@@ -6,7 +6,7 @@ enabled = true
 
 [bar.default]
 capsule = true
-center = [ "clock", "workspaces", "cat" ]
+center = [ "clock", "workspaces" ]
 concave_edge_corners = true
 contact_shadow = true
 end = [ "tray", "group:g2", "group:g4", "group:g3" ]
@@ -142,6 +142,9 @@ magnification_scale = 1.2000000029802322
 reserve_space = false
 show_dots = true
 
+[hooks]
+colors_changed = "fish /home/branch/dotfiles/fcitx/scripts/generate-mellow-theme.fish"
+
 [hot_corners]
 enabled = true
 
@@ -191,9 +194,9 @@ widget_order = [ "lockscreen-login-box@HDMI-A-1" ]
 
     [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
     box_height = 196.0
-    box_width = 720.0
+    box_width = 810.0
     cx = 960.0
-    cy = 961.0
+    cy = 898.0
     output = "HDMI-A-1"
     placement_height = 1080.0
     placement_width = 1920.0
@@ -236,12 +239,12 @@ flatpak_enabled = false
 panel_placement = "floating"
 
 [plugins]
-enabled = [ "noctalia/screen_recorder", "noctalia/bongocat", "kenn/keybind-cheatsheet", "yuuto/arch-updater" ]
+enabled = [ "noctalia/screen_recorder", "kenn/keybind-cheatsheet", "yuuto/arch-updater" ]
 
 [shell]
 avatar_path = "/home/branch/pictures/wallpapers/reisen.jpg"
 external_ip_enabled = true
-font_family = "Adwaita Mono"
+font_family = "PT Serif"
 launch_apps_as_systemd_services = true
 niri_overview_type_to_launch_enabled = true
 password_style = "random"
@@ -254,6 +257,10 @@ screen_time_enabled = true
 
     [shell.launcher]
     session_search = true
+    show_app_actions = true
+
+        [shell.launcher.providers.windows]
+        global = true
 
     [shell.panel]
     control_center_placement = "floating"
@@ -278,9 +285,6 @@ community_palette = "ADW"
 mode = "dark"
 source = "wallpaper"
 wallpaper_scheme = "faithful"
-
-[hooks]
-colors_changed = "fish /home/branch/dotfiles/fcitx/scripts/generate-mellow-theme.fish"
 
     [theme.templates]
     builtin_ids = [ "btop", "gtk3", "gtk4", "ghostty", "helix", "kcolorscheme", "niri", "qt" ]
@@ -324,12 +328,6 @@ transition_on_startup = true
 
 [widget.brightness]
 show_label = false
-
-[widget.cat]
-# this will be replaced by script in .lcoal/state/noctalia/settings.toml
-input_devices = [ "/dev/input/event21" ]
-scale = 1.7
-type = "noctalia/bongocat:cat"
 
 [widget.clock]
 font_family = "Adwaita Mono"
