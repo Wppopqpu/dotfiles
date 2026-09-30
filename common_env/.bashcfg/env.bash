@@ -4,3 +4,5 @@ export PATH=$HOME/.local/bin:$PATH
 
 # 防止wayland下游戏冻结
 # export VKD3D_DISABLE_EXTENSIONS=VK_KHR_present_wait
+
+export ELECTRON_OZONE_PLATFORM_HINT=auto
