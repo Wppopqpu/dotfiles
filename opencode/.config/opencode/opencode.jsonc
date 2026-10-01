@@ -4,8 +4,11 @@
 	// "model": "anthropic/claude-fable-5.1",
 	"model": "openai/gpt-5.6-terra",
 	"small_model": "openai/gpt-4.1-nano",
-	"plugin": ["opencode-workflow", "opencode-dynamic-context-pruning", "@mohak34/opencode-notifier@latest"],
-	"instructions": ["~/opencode_skills/rust-skills/.opencode/instructions/rust-skills.md"],
+	"plugin": ["opencode-workflow", "@tarquinen/opencode-dcp", "@mohak34/opencode-notifier"],
+	"instructions": ["~/.config/opencode/skills/rust-skills/.opencode/instructions/rust-skills.md"],
+	"skills": {
+		"paths": ["~/.config/opencode/skills/rust-skills/skills"]
+	},
 
 	"provider": {
 		"openai": {
