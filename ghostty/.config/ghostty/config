@@ -57,7 +57,6 @@ font-size = 14
 window-inherit-font-size = true
 font-thicken = true
 
-theme = noctalia
 adjust-cursor-thickness = 3
 adjust-underline-position = 3
 cursor-opacity = 0.8
@@ -78,3 +77,4 @@ quit-after-last-window-closed-delay = 5m
 custom-shader-animation = true
 # custom-shader = cursor_smear_rainbow.glsl
 custom-shader = glow.glsl
+theme = noctalia
