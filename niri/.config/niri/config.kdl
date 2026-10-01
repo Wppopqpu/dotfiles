@@ -723,5 +723,8 @@ binds {
 	Mod+Shift+Y hotkey-overlay-title="spawn file manager (nautilus)" { spawn "nautilus"; }
 }
 
-include "./noctalia.kdl"
 include "./shaders/ribbons.kdl"
+
+
+
+include "noctalia.kdl"
