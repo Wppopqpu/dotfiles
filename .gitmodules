@@ -11,3 +11,6 @@
 [submodule "opencode/.config/opencode/skills/latex-document-skill"]
 	path = opencode/.config/opencode/skills/latex-document-skill
 	url = https://github.com/ndpvt-web/latex-document-skill.git
+[submodule "opencode/.config/opencode/skills/rust-skills"]
+	path = opencode/.config/opencode/skills/rust-skills
+	url = https://github.com/actionbook/rust-skills.git
