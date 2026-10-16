@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+"""Run a supported script from ~/scripts with its matching interpreter."""
+
+import os
+from pathlib import Path
+import sys
+
+
+INTERPRETERS = {
+    ".fish": "fish",
+    ".py": "python3",
+}
+
+
+def fail(message: str) -> int:
+    print(f"c: {message}", file=sys.stderr)
+    return 2
+
+
+def main() -> int:
+    if len(sys.argv) < 2:
+        return fail("usage: c <script> [arguments...]")
+
+    requested = Path(sys.argv[1])
+    if requested.is_absolute() or ".." in requested.parts:
+        return fail("script path must stay within ~/scripts")
+
+    scripts_dir = Path.home() / "scripts"
+    script = scripts_dir / requested
+    if not script.is_file():
+        return fail(f"script not found: {requested}")
+
+    interpreter = INTERPRETERS.get(script.suffix)
+    if interpreter is None:
+        return fail(f"unsupported script type: {script.suffix or '<none>'}")
+
+    try:
+        os.execvp(interpreter, [interpreter, str(script), *sys.argv[2:]])
+    except FileNotFoundError:
+        print(f"c: interpreter not found: {interpreter}", file=sys.stderr)
+        return 127
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
