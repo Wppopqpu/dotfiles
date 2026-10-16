@@ -256,6 +256,7 @@ screen_time_enabled = true
     privilege_command = "pkexec"
 
     [shell.launcher]
+    search_position = "top"
     session_search = true
     show_app_actions = true
 
@@ -283,6 +284,7 @@ screen_time_enabled = true
 [theme]
 community_palette = "ADW"
 mode = "dark"
+shell_mode = "dark"
 source = "wallpaper"
 wallpaper_scheme = "faithful"
 
@@ -323,8 +325,9 @@ transition_on_startup = true
     theme_mode = "auto"
 
     [[wallpaper.favorite]]
+    palette_source = "wallpaper"
     path = "/home/branch/pictures/wallpapers/remilia&flandre.jpg"
-    theme_mode = "auto"
+    theme_mode = "dark"
 
 [widget.brightness]
 show_label = false
