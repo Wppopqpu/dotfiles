@@ -5,9 +5,6 @@
 	"model": "openai/gpt-5.6-terra",
 	"small_model": "openai/gpt-5.6-luna",
 	"plugin": ["@tarquinen/opencode-dcp", "@mohak34/opencode-notifier"],
-	"skills": {
-		"paths": ["~/.config/opencode/skills/rust-skills/skills"]
-	},
 
 	"provider": {
 		"openai": {
