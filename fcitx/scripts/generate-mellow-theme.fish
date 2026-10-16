@@ -44,4 +44,5 @@ cp "$panel_svg" "$theme_dir/panel.svg"
 sed -i -e "s/#151515/$surface/g" -e "s/#909090/$outline/g" "$theme_dir/panel.svg"
 cp "$highlight_svg" "$theme_dir/highlight.svg"
 sed -i -e "s/#808080/$primary/g" -e "s/#000000/$on_primary/g" "$theme_dir/highlight.svg"
-fcitx5-remote -r >/dev/null 2>&1; or true
+busctl --user call org.fcitx.Fcitx5 /controller \
+    org.fcitx.Fcitx.Controller1 ReloadAddonConfig s classicui >/dev/null 2>&1; or true
