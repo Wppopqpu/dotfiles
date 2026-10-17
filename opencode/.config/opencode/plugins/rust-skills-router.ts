@@ -1,4 +1,3 @@
-import type { Plugin } from "@opencode-ai/plugin"
 import { existsSync } from "fs"
 import path from "path"
 
@@ -22,6 +21,23 @@ type RouterMessage = {
   parts: RouterPart[]
 }
 
+type V2Context = {
+  location: {
+    directory: string
+    project?: { canonical?: string }
+  }
+  session: {
+    hook(name: "context", callback: (event: V2ContextEvent) => void): Promise<unknown>
+  }
+}
+
+type V2ContextEvent = {
+  messages: Array<{
+    role?: string
+    content?: Array<RouterPart>
+  }>
+}
+
 function isInjectedPart(part: RouterPart): boolean {
   return part.type === "text" && part.text?.startsWith(INJECTION_PREFIX) === true
 }
@@ -33,7 +49,7 @@ function messageText(message: RouterMessage): string {
     .join("\n")
 }
 
-export default (async ({ directory, worktree }) => {
+async function v1Server({ directory, worktree }: { directory: string; worktree?: string }) {
   const projectRoot = worktree || directory
   const isRustWorkspace = existsSync(path.join(projectRoot, "Cargo.toml"))
 
@@ -59,4 +75,30 @@ export default (async ({ directory, worktree }) => {
       }
     },
   }
-}) satisfies Plugin
+}
+
+async function setupV2(ctx: V2Context) {
+  const projectRoot = ctx.location.project?.canonical || ctx.location.directory
+  const isRustWorkspace = existsSync(path.join(projectRoot, "Cargo.toml"))
+
+  await ctx.session.hook("context", (event) => {
+    const latestUserMessage = [...event.messages].reverse().find((message) => message.role === "user")
+    if (!latestUserMessage?.content) return
+
+    const text = latestUserMessage.content
+      .filter((part) => part.type === "text" && typeof part.text === "string")
+      .map((part) => part.text)
+      .join("\n")
+
+    if (isRustWorkspace || RUST_SIGNAL.test(text)) {
+      latestUserMessage.content.push({ type: "text", text: ROUTE_INSTRUCTION })
+    }
+  })
+}
+
+// V1 (>= 1.18.29) calls server(); V2 calls setup().
+export default {
+  id: "local.rust-skills-router",
+  setup: setupV2,
+  server: v1Server,
+}

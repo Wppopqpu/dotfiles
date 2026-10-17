@@ -3,17 +3,21 @@
 	"lsp": true,
 	// "model": "anthropic/claude-fable-5.1",
 	"model": "openai/gpt-5.6-terra",
-	"small_model": "openai/gpt-5.6-luna",
-	"plugin": ["@tarquinen/opencode-dcp", "@mohak34/opencode-notifier"],
+	"agents": {
+		"title": {
+			"model": "openai/gpt-5.6-luna"
+		}
+	},
+	"plugins": ["@tarquinen/opencode-dcp@3.2.0", "@mohak34/opencode-notifier@1.0.0"],
 
-	"provider": {
+	"providers": {
 		"openai": {
-			"options": {
+			"settings": {
 				"baseURL": "https://www.hejuapi.com/v1"
 			}
 		},
 		"anthropic": {
-			"options": {
+			"settings": {
 				"baseURL": "https://www.hejuapi.com/v1"
 			}
 		}

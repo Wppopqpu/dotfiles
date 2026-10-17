@@ -1,4 +1,3 @@
-import type { Plugin } from "@opencode-ai/plugin"
 import { createHash } from "crypto"
 import { tmpdir } from "os"
 import path from "path"
@@ -94,6 +93,7 @@ function isPluginInjectedText(text: string): boolean {
 // system prompt and path hint (default: "image-reader").
 const VISION_MODE_RAW = (process.env["VISION_MODE"] || "").toLowerCase()
 const VISION_SUBAGENT_NAME = process.env["VISION_SUBAGENT_NAME"] || "image-reader"
+const VISION_FALLBACK_TOOL_ID = process.env["VISION_FALLBACK_TOOL_ID"] || "vision"
 const hasApiKey = !!process.env["VISION_API_KEY"]
 const VISION_MODE: "api" | "subagent" =
   VISION_MODE_RAW === "subagent" ? "subagent" :
@@ -153,7 +153,7 @@ function nativeVisionBlockArgs() {
   }
 }
 
-export default (async () => {
+async function v1Server() {
   // Ensure the temp root dir exists at plugin startup
   await fs.mkdir(TMP_DIR, { recursive: true }).catch(() => {})
 
@@ -297,4 +297,162 @@ export default (async () => {
       }
     },
   }
-}) satisfies Plugin
+}
+
+type V2Model = {
+  providerID?: string
+  id?: string
+  modelID?: string
+  capabilities?: { input?: string[] }
+}
+
+type V2MediaPart = {
+  type?: string
+  media?: {
+    mediaType?: string
+    source?: {
+      type?: string
+      data?: string | Uint8Array
+    }
+  }
+}
+
+type V2ContextEvent = {
+  sessionID: string
+  model: V2Model
+  system: Array<{ type: "text"; text: string }>
+  messages: Array<{
+    role?: string
+    content?: V2MediaPart[]
+  }>
+  tools: Record<string, unknown>
+}
+
+type V2Context = {
+  model: {
+    list(): Promise<{ data: readonly V2Model[] }>
+  }
+  session: {
+    hook(name: "context", callback: (event: V2ContextEvent) => void | Promise<void>): Promise<unknown>
+  }
+  tool: {
+    hook(
+      name: "execute.before",
+      callback: (event: { tool: string; sessionID: string; input: unknown }) => void | Promise<void>,
+    ): Promise<unknown>
+  }
+}
+
+type SavedImage = {
+  name: string
+  path: string
+  seq: number
+}
+
+function v2ModelSupportsImage(model: V2Model, models: readonly V2Model[]): boolean {
+  const modelID = model.modelID || model.id
+  const selectedModel = models.find(
+    (candidate) =>
+      candidate.providerID === model.providerID &&
+      (candidate.id === modelID || candidate.modelID === modelID),
+  )
+  const input = selectedModel?.capabilities?.input || model.capabilities?.input || []
+  return input.some((capability) => capability === "image" || capability.startsWith("image/"))
+}
+
+async function saveV2Images(messages: V2ContextEvent["messages"]): Promise<SavedImage[]> {
+  const savedByPath = new Map<string, SavedImage>()
+
+  for (const message of messages) {
+    if (message.role !== "user") continue
+
+    for (const part of message.content || []) {
+      const media = part.type === "media" ? part.media : undefined
+      const mime = media?.mediaType
+      const source = media?.source
+      if (!mime?.startsWith("image/") || !source) continue
+
+      let data: Buffer
+      if (source.type === "base64" && typeof source.data === "string") {
+        data = Buffer.from(source.data, "base64")
+      } else if (source.type === "bytes" && source.data instanceof Uint8Array) {
+        data = Buffer.from(source.data)
+      } else {
+        continue
+      }
+
+      const hash = createHash("md5").update(data).digest("hex").slice(0, 16)
+      let seq = imageRegistry.get(hash)
+      if (!seq) {
+        seq = nextImageSeq++
+        imageRegistry.set(hash, seq)
+        reverseRegistry.set(seq, hash)
+      }
+
+      const ext = mime.split("/")[1]?.split(/[+;]/)[0] || "png"
+      const name = `${hash}.${ext}`
+      const seqDir = path.join(TMP_DIR, `image${seq}`)
+      const filePath = path.join(seqDir, name)
+
+      try {
+        await fs.mkdir(seqDir, { recursive: true })
+        await fs.access(filePath).catch(() => fs.writeFile(filePath, data))
+      } catch (err) {
+        console.error(`[vision-helper] Failed to write ${filePath}:`, err)
+        continue
+      }
+
+      touchLRU(seqDir)
+      savedByPath.set(filePath, { name, path: filePath, seq })
+    }
+  }
+
+  return [...savedByPath.values()]
+}
+
+function v2ImageInstruction(saved: SavedImage[]): string {
+  const paths = saved.map((image) => image.path).join("\n")
+  if (VISION_MODE === "subagent") {
+    return `${HINT_PREFIX} The current model cannot view image attachments. Analyze these saved image files with the \`subagent\` tool using agent="${VISION_SUBAGENT_NAME}":\n${paths}`
+  }
+
+  return `${HINT_PREFIX} The current model cannot view image attachments. Analyze these saved image files with the \`${VISION_FALLBACK_TOOL_ID}\` tool:\n${paths}`
+}
+
+async function setupV2(ctx: V2Context) {
+  await fs.mkdir(TMP_DIR, { recursive: true }).catch(() => {})
+  const sessionImageSupport = new Map<string, boolean>()
+
+  await ctx.session.hook("context", async (event) => {
+    const { data: models } = await ctx.model.list()
+    const hasImage = v2ModelSupportsImage(event.model, models)
+    sessionImageSupport.set(event.sessionID, hasImage)
+
+    if (hasImage) {
+      event.system.push({
+        type: "text",
+        text: "You have native image input capabilities. You can directly view and analyze images attached to user messages. Do NOT call the vision fallback tool to read images sent by the user - analyze them natively instead.",
+      })
+      delete event.tools[VISION_FALLBACK_TOOL_ID]
+      return
+    }
+
+    const saved = await saveV2Images(event.messages)
+    if (saved.length > 0) {
+      event.system.push({ type: "text", text: v2ImageInstruction(saved) })
+    }
+  })
+
+  await ctx.tool.hook("execute.before", (event) => {
+    if (event.tool === VISION_FALLBACK_TOOL_ID && sessionImageSupport.get(event.sessionID)) {
+      throw new Error("The current model has native image input; do not use the vision fallback tool.")
+    }
+  })
+}
+
+// V1 (>= 1.18.29) calls server(); V2 calls setup().
+export default {
+  id: "local.vision-helper",
+  setup: setupV2,
+  server: v1Server,
+}
