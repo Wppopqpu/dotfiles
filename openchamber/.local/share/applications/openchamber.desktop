@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=OpenChamber
+Comment=Open the OpenChamber workspace in a dedicated Firefox profile
+Exec=/home/branch/scripts/openchamber-browser.fish
+Icon=openchamber
+Terminal=false
+Categories=Development;IDE;
+StartupWMClass=firefox
