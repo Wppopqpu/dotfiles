@@ -1,0 +1,53 @@
+{
+  "securityScopedBookmarks": [],
+  "desktopLocalPort": 57123,
+  "desktopWindowState": {
+    "x": 16,
+    "y": 10,
+    "width": 936,
+    "height": 1014,
+    "maximized": false,
+    "fullscreen": false
+  },
+  "homeDirectory": "/home/branch",
+  "desktopSplashColors": {
+    "bgLight": "#fdfcfa",
+    "fgLight": "#44443d",
+    "bgDark": "#13141e",
+    "fgDark": "#dcdde3"
+  },
+  "desktopHosts": [],
+  "desktopDefaultHostId": "local",
+  "desktopInitialHostChoiceCompleted": true,
+  "openCodeUpdateToastDismissedVersion": "2.0.32",
+  "lightThemeId": "openchamber-light",
+  "darkThemeId": "openchamber-dark",
+  "notifyOnSubtasks": true,
+  "notifyOnCompletion": true,
+  "notifyOnError": true,
+  "notifyOnQuestion": true,
+  "notificationTemplates": {
+    "completion": {
+      "title": "{agent_name} is ready",
+      "message": "{model_name} completed the task"
+    },
+    "error": {
+      "title": "Tool error",
+      "message": "{last_message}"
+    },
+    "question": {
+      "title": "Input needed",
+      "message": "{last_message}"
+    },
+    "subtask": {
+      "title": "{agent_name} is ready",
+      "message": "{model_name} completed the task"
+    }
+  },
+  "nativeNotificationsEnabled": true,
+  "themeVariant": "dark",
+  "uiFont": "system",
+  "locale": "zh-CN",
+  "notificationMode": "always",
+  "smallModelUseDefault": false
+}

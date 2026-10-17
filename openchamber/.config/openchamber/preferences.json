@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "fields": {
+    "lightThemeId": {
+      "updatedAt": 1792153184377,
+      "value": "openchamber-light"
+    },
+    "darkThemeId": {
+      "updatedAt": 1792153184377,
+      "value": "openchamber-dark",
+      "surfaces": {
+        "desktop": {
+          "value": "tokyonight-dark",
+          "updatedAt": 1792153697919
+        },
+        "web": {
+          "value": "tokyonight-dark",
+          "updatedAt": 1792197220084
+        }
+      }
+    },
+    "notifyOnSubtasks": {
+      "updatedAt": 1792153184377,
+      "value": true
+    },
+    "notifyOnCompletion": {
+      "updatedAt": 1792153184377,
+      "value": true
+    },
+    "notifyOnError": {
+      "updatedAt": 1792153184377,
+      "value": true
+    },
+    "notifyOnQuestion": {
+      "updatedAt": 1792153184377,
+      "value": true
+    },
+    "notificationTemplates": {
+      "updatedAt": 1792153184377,
+      "value": {
+        "completion": {
+          "title": "{agent_name} is ready",
+          "message": "{model_name} completed the task"
+        },
+        "error": {
+          "title": "Tool error",
+          "message": "{last_message}"
+        },
+        "question": {
+          "title": "Input needed",
+          "message": "{last_message}"
+        },
+        "subtask": {
+          "title": "{agent_name} is ready",
+          "message": "{model_name} completed the task"
+        }
+      }
+    },
+    "nativeNotificationsEnabled": {
+      "updatedAt": 1792153385031,
+      "value": true
+    },
+    "themeVariant": {
+      "updatedAt": 1792153697919,
+      "value": "dark"
+    },
+    "uiFont": {
+      "updatedAt": 1792153731038,
+      "value": "system"
+    },
+    "locale": {
+      "updatedAt": 1792197223300,
+      "value": "zh-CN"
+    },
+    "notificationMode": {
+      "updatedAt": 1792197265858,
+      "value": "always"
+    },
+    "themeId": {
+      "updatedAt": 0,
+      "surfaces": {
+        "web": {
+          "value": "tokyonight-dark",
+          "updatedAt": 1792197220084
+        }
+      }
+    },
+    "useSystemTheme": {
+      "updatedAt": 0,
+      "surfaces": {
+        "web": {
+          "value": true,
+          "updatedAt": 1792197220084
+        }
+      }
+    },
+    "smallModelUseDefault": {
+      "value": false,
+      "updatedAt": 1792197301175
+    }
+  }
+}
