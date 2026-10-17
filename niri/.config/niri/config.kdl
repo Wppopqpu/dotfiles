@@ -113,7 +113,7 @@ output "HDMI-A-1" {
 }
 
 cursor {
-	xcursor-theme "koishi_cursors"
+	xcursor-theme "flandre_cursors"
 	xcursor-size 48
 }
 
@@ -483,7 +483,7 @@ binds {
 	Mod+S hotkey-overlay-title="neru: scroll mode" { spawn "neru" "scroll"; }
 	Mod+X hotkey-overlay-title="neru: hints mode" { spawn "neru" "hints"; }
 
-	Mod+E hotkey-overlay-title="start magnifier" { spawn "wooz" "--zoom-in" "25%" "--mouse-track" "--invert-scroll"; }
+	Mod+E hotkey-overlay-title="toggle magnifier" { spawn "miructl" "toggle"; }
 
 	// You can also use a shell. Do this if you need pipes, multiple commands, etc.
 	// Note: the entire command goes as a single argument in the end.
