@@ -17,3 +17,6 @@
 [submodule "opencode/.config/opencode/skills/rewrite-rs-skills"]
 	path = opencode/.config/opencode/skills/rewrite-rs-skills
 	url = https://github.com/rewrite-rs/skills.git
+[submodule "opencode/.config/opencode/plugins/opencode-v2-lsp-support"]
+	path = opencode/.config/opencode/plugins/opencode-v2-lsp-support
+	url = https://github.com/christensenjairus/opencode-v2-lsp-support.git
